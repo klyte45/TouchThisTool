@@ -1,0 +1,16 @@
+/.project
+/deldll.cmd
+/devInfo.txt
+/TesteLinha.userprefs
+/TransportLinesManager.csproj
+/TransportLinesManager.sln
+/TransportLinesManager.userprefs
+/bin/
+/.gitignore
+obj
+.vs
+/Properties/Settings.Designer.cs
+/Properties/Settings.settings
+/TransportLinesManager.ruleset
+/*.sln
+/*.csproj
