@@ -284,14 +284,9 @@ namespace Klyte.TouchThis
         public static TouchThisTool instance;
 
 
-        private static Color m_hoverColor = new Color32(0, 181, byte.MaxValue, byte.MaxValue);
+        private static Color m_hoverColor = new Color32(47, byte.MaxValue, 47, byte.MaxValue);
 
-        private static Color m_selectedColor = new Color32(95, 166, 0, 244);
-
-        private static Color m_moveColor = new Color32(125, 196, 30, 244);
-
-        private static Color m_removeColor = new Color32(byte.MaxValue, 160, 47, 191);
-
+        private static Color m_removeColor = new Color32(byte.MaxValue, 47, 47, 191);
         private static Color m_despawnColor = new Color32(byte.MaxValue, 160, 47, 191);
 
         public static Shader shaderBlend = Shader.Find("Custom/Props/Decal/Blend");

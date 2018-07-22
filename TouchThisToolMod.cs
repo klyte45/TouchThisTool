@@ -11,7 +11,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-[assembly: AssemblyVersion("2.0.0.*")]
+[assembly: AssemblyVersion("2.0.1.*")]
 namespace Klyte.TouchThis
 {
     public class TouchThisToolMod : MonoBehaviour, IUserMod, ILoadingExtension
@@ -41,14 +41,18 @@ namespace Klyte.TouchThis
         {
             if (!m_isKlyteCommonsLoaded)
             {
-                var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-                var assembly = (from a in assemblies
-                                where a.GetType("Klyte.Commons.KlyteCommonsMod") != null
-                                select a).SingleOrDefault();
-                if (assembly != null)
+                try
                 {
-                    m_isKlyteCommonsLoaded = true;
+                    var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                    var assembly = (from a in assemblies
+                                    where a.GetType("Klyte.Commons.KlyteCommonsMod") != null
+                                    select a).SingleOrDefault();
+                    if (assembly != null)
+                    {
+                        m_isKlyteCommonsLoaded = true;
+                    }
                 }
+                catch { }
             }
             return m_isKlyteCommonsLoaded;
         }
@@ -66,7 +70,7 @@ namespace Klyte.TouchThis
         {
             get {
 
-                return "Touch This Tool! " + version;
+                return "Touch This! Tool " + version;
             }
         }
 
