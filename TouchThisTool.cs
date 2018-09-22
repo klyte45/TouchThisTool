@@ -146,7 +146,7 @@ namespace Klyte.TouchThis
 
         private ItemClass.Layer GetItemLayers()
         {
-            ItemClass.Layer layer = ItemClass.Layer.Default;
+            ItemClass.Layer layer = ItemClass.Layer.Default;            
             if (Singleton<InfoManager>.instance.CurrentMode == InfoManager.InfoMode.Water)
             {
                 layer |= ItemClass.Layer.WaterPipes;
@@ -193,6 +193,11 @@ namespace Klyte.TouchThis
 
             this.m_hoverSegment = output.m_netSegment;
 
+
+            if(m_hoverSegment == 0)
+            {
+
+            }
         }
 
         public override void RenderOverlay(RenderManager.CameraInfo cameraInfo)
@@ -294,6 +299,7 @@ namespace Klyte.TouchThis
         public static Shader shaderSolid = Shader.Find("Custom/Props/Decal/Solid");
 
         private ushort m_hoverSegment;
+        private ushort m_hoverProp;
 
         private bool m_prevRenderZones;
 

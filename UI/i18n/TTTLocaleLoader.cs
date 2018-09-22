@@ -13,7 +13,7 @@ namespace Klyte.TouchThis.i18n
         private const string commentChar = "#";
         private const string ignorePrefixChar = "%";
         private static string language = "";
-        private static string[] locales = new string[] { "en", "pt" };
+        private static string[] locales = new string[] { "en", "pt", "fr", "ru" };
 
         public static string loadedLanguage
         {
