@@ -1,2 +1,4 @@
-﻿TTTv2
+﻿TTTv2.0.2
+    - Added French and Russian support.
+TTTv2
     - Now the touch this is a tool! Use it to release the untouchable segments!
