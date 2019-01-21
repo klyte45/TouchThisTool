@@ -11,7 +11,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-[assembly: AssemblyVersion("2.0.2.0")]
+[assembly: AssemblyVersion("2.0.2.1")]
 namespace Klyte.TouchThis
 {
     public class TouchThisToolMod : MonoBehaviour, IUserMod, ILoadingExtension
