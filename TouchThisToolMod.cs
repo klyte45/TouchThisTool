@@ -6,6 +6,7 @@ using ICities;
 using Klyte.Commons.Extensors;
 using Klyte.Commons.Interfaces;
 using Klyte.TouchThis.i18n;
+using Klyte.TouchThis.TextureAtlas;
 using Klyte.TouchThis.Utils;
 using System;
 using System.Linq;
@@ -15,7 +16,7 @@ using UnityEngine;
 [assembly: AssemblyVersion("2.0.2.9999")]
 namespace Klyte.TouchThis
 {
-    public class TouchThisToolMod : BasicIUserMod<TouchThisToolMod, TTTLocaleUtils, TTTResourceLoader>
+    public class TouchThisToolMod : BasicIUserMod<TouchThisToolMod, TTTLocaleUtils, TTTResourceLoader, TTTController, TTTCommonTextureAtlas, UICustomControl>
     {
         public TouchThisToolMod()
         {
@@ -37,30 +38,6 @@ namespace Klyte.TouchThis
         }
 
         public override void LoadSettings()
-        {
-        }
-
-        public override void OnCreated(ILoading loading)
-        {
-        }
-
-        public override void OnLevelLoaded(LoadMode mode)
-        {
-            TTTUtils.doLog("LEVEL LOAD");
-            if (mode != LoadMode.LoadGame && mode != LoadMode.NewGame && mode != LoadMode.NewGameFromScenario)
-            {
-                TTTUtils.doLog("NOT GAME ({0})", mode);
-                return;
-            }
-
-            TTTController.Ensure();
-        }
-
-        public override void OnLevelUnloading()
-        {
-        }
-
-        public override void OnReleased()
         {
         }
 

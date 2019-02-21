@@ -6,11 +6,10 @@ using UnityEngine;
 
 namespace Klyte.TouchThis
 {
-    internal class TTTController : Singleton<TTTController>
+    public class TTTController : MonoBehaviour
     {
         private UIButton openTTTPanelButton;
         public UIButton ToolButton => openTTTPanelButton;
-
 
         public void Start()
         {
@@ -32,11 +31,6 @@ namespace Klyte.TouchThis
                 TouchThisToolMod.instance.showVersionInfoPopup();
                 TouchThisTool.instance.enabled = (s == UIButton.ButtonState.Focused);
             };
-        }
-
-        public void Awake()
-        {
-
         }
 
     }
