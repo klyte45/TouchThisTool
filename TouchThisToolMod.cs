@@ -13,7 +13,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-[assembly: AssemblyVersion("2.0.2.9999")]
+[assembly: AssemblyVersion("2.0.3.9999")]
 namespace Klyte.TouchThis
 {
     public class TouchThisToolMod : BasicIUserMod<TouchThisToolMod, TTTLocaleUtils, TTTResourceLoader, TTTController, TTTCommonTextureAtlas, UICustomControl>

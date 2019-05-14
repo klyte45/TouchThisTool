@@ -25,7 +25,7 @@ namespace Klyte.TouchThis
             openTTTPanelButton.normalBgSprite = "TouchThisIconSmall";
             openTTTPanelButton.focusedFgSprite = "ToolbarIconGroup6Focused";
             openTTTPanelButton.hoveredFgSprite = "ToolbarIconGroup6Hovered";
-            UnityEngine.Object.FindObjectOfType<ToolController>().gameObject.AddComponent<TouchThisTool>();
+            FindObjectOfType<ToolController>().gameObject.AddComponent<TouchThisTool>();
             this.openTTTPanelButton.eventButtonStateChanged += delegate (UIComponent c, UIButton.ButtonState s)
             {
                 TouchThisToolMod.instance.showVersionInfoPopup();
