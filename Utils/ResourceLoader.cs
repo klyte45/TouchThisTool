@@ -4,6 +4,6 @@ namespace Klyte.TouchThis.Utils
 {
     public sealed class TTTResourceLoader : KlyteResourceLoader<TTTResourceLoader>
     {
-        protected override string prefix => "Klyte.TouchThis.";
+        protected override string Prefix => "Klyte.TouchThis.";
     }
 }

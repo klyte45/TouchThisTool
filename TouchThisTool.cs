@@ -2,6 +2,7 @@
 using ColossalFramework.Math;
 using ColossalFramework.UI;
 using Klyte.Commons;
+using Klyte.Commons.Utils;
 using Klyte.TouchThis.Utils;
 using System;
 using System.Diagnostics;
@@ -15,10 +16,10 @@ namespace Klyte.TouchThis
 
         protected override void OnLeftClick()
         {
-            TTTUtils.doLog("OnLeftClick");
-            if (m_hoverSegment > 0 && (segmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0)
+            LogUtils.DoLog("OnLeftClick");
+            if (m_hoverSegment > 0 && (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0)
             {
-                TTTUtils.doLog("Touching!");
+                LogUtils.DoLog("Touching!");
                 InstanceID id = new InstanceID
                 {
                     NetSegment = m_hoverSegment
@@ -30,7 +31,7 @@ namespace Klyte.TouchThis
 
                 EffectInfo.SpawnArea spawnArea = new EffectInfo.SpawnArea(new Vector3(), new Vector3(), 0);
                 Singleton<EffectManager>.instance.DispatchEffect(effectInfo, id, spawnArea, Vector3.zero, 0f, 1f, Singleton<AudioManager>.instance.DefaultGroup, 0u, true);
-                TTTUtils.doLog("Touched!");
+                LogUtils.DoLog("Touched!");
             }
         }
 
@@ -39,8 +40,8 @@ namespace Klyte.TouchThis
 
             if (m_hoverSegment != 0)
             {
-                Color toolColor = (segmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0 ? m_hoverColor : m_removeColor;
-                RenderOverlay(cameraInfo, toolColor, m_despawnColor, m_hoverSegment);
+                Color toolColor = (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0 ? m_hoverColor : m_removeColor;
+                RenderOverlay(cameraInfo, toolColor, m_hoverSegment);
                 return;
             }
         }

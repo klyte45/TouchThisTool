@@ -8,27 +8,27 @@ namespace Klyte.TouchThis
 {
     public class TTTController : MonoBehaviour
     {
-        private UIButton openTTTPanelButton;
-        public UIButton ToolButton => openTTTPanelButton;
+        private UIButton m_openTTTPanelButton;
+        public UIButton ToolButton => m_openTTTPanelButton;
 
         public void Start()
         {
 
             UITabstrip toolStrip = ToolsModifierControl.mainToolbar.GetComponentInChildren<UITabstrip>();
-            openTTTPanelButton = toolStrip.AddTab();
-            this.openTTTPanelButton.size = new Vector2(49f, 49f);
-            this.openTTTPanelButton.name = "TouchThisButton";
-            this.openTTTPanelButton.tooltip = "Touch This Tool (v" + TouchThisToolMod.version + ")";
-            this.openTTTPanelButton.relativePosition = new Vector3(0f, 5f);
-            toolStrip.AddTab("TouchThisButton", this.openTTTPanelButton.gameObject, null, null);
-            openTTTPanelButton.atlas = TTTCommonTextureAtlas.instance.atlas;
-            openTTTPanelButton.normalBgSprite = "TouchThisIconSmall";
-            openTTTPanelButton.focusedFgSprite = "ToolbarIconGroup6Focused";
-            openTTTPanelButton.hoveredFgSprite = "ToolbarIconGroup6Hovered";
+            m_openTTTPanelButton = toolStrip.AddTab();
+            this.m_openTTTPanelButton.size = new Vector2(49f, 49f);
+            this.m_openTTTPanelButton.name = "TouchThisButton";
+            this.m_openTTTPanelButton.tooltip = "Touch This Tool (v" + TouchThisToolMod.Version + ")";
+            this.m_openTTTPanelButton.relativePosition = new Vector3(0f, 5f);
+            toolStrip.AddTab("TouchThisButton", this.m_openTTTPanelButton.gameObject, null, null);
+            m_openTTTPanelButton.atlas = TTTCommonTextureAtlas.instance.Atlas;
+            m_openTTTPanelButton.normalBgSprite = "TouchThisIconSmall";
+            m_openTTTPanelButton.focusedFgSprite = "ToolbarIconGroup6Focused";
+            m_openTTTPanelButton.hoveredFgSprite = "ToolbarIconGroup6Hovered";
             FindObjectOfType<ToolController>().gameObject.AddComponent<TouchThisTool>();
-            this.openTTTPanelButton.eventButtonStateChanged += delegate (UIComponent c, UIButton.ButtonState s)
+            this.m_openTTTPanelButton.eventButtonStateChanged += delegate (UIComponent c, UIButton.ButtonState s)
             {
-                TouchThisToolMod.instance.showVersionInfoPopup();
+                TouchThisToolMod.Instance.ShowVersionInfoPopup();
                 TouchThisTool.instance.enabled = (s == UIButton.ButtonState.Focused);
             };
         }
