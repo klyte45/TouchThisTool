@@ -1,3 +1,4 @@
 ﻿TTTv3
 	- Removed Klyte Commons' dependency
 	- Performance improvements
+	- Fixed: tool needs double click to work

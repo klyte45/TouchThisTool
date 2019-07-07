@@ -2,6 +2,7 @@
 using ColossalFramework.UI;
 using Klyte.TouchThis.TextureAtlas;
 using Klyte.TouchThis.Utils;
+using System.Collections;
 using UnityEngine;
 
 namespace Klyte.TouchThis
@@ -29,8 +30,15 @@ namespace Klyte.TouchThis
             this.m_openTTTPanelButton.eventButtonStateChanged += delegate (UIComponent c, UIButton.ButtonState s)
             {
                 TouchThisToolMod.Instance.ShowVersionInfoPopup();
-                TouchThisTool.instance.enabled = (s == UIButton.ButtonState.Focused);
+                StartCoroutine(ToggleTool());
             };
+        }
+
+        private  IEnumerator ToggleTool()
+        {
+            yield return 0;
+            InfoManager.instance.SetCurrentMode(InfoManager.InfoMode.None, InfoManager.SubInfoMode.None);
+            TouchThisTool.instance.enabled = (m_openTTTPanelButton.state == UIButton.ButtonState.Focused);
         }
 
     }
