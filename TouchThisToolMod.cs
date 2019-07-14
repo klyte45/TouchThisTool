@@ -14,7 +14,7 @@ using System.Reflection;
 using UnityEngine;
 using static Klyte.TouchThis.TextureAtlas.TTTCommonTextureAtlas;
 
-[assembly: AssemblyVersion("3.0.0.0")]
+[assembly: AssemblyVersion("3.0.1.0")]
 namespace Klyte.TouchThis
 {
     public class TouchThisToolMod : BasicIUserMod<TouchThisToolMod, TTTResourceLoader, TTTController, TTTCommonTextureAtlas, UICustomControl, SpriteNames>

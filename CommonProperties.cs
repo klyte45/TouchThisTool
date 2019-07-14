@@ -21,7 +21,7 @@ namespace Klyte.Commons
     {
         public static bool DebugMode => TouchThisToolMod.DebugMode;
         public static string Version => TouchThisToolMod.Version;
-
+        public static string ModName => TouchThisToolMod.Instance.SimpleName;        
         public static object Acronym => "TTT";
     }
 }
