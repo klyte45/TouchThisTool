@@ -1,7 +1,4 @@
 /.project
-/deldll.cmd
-/devInfo.txt
 /bin/
-/.gitignore
 obj
 .vs
