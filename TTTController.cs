@@ -1,7 +1,5 @@
-﻿using ColossalFramework;
-using ColossalFramework.UI;
+﻿using ColossalFramework.UI;
 using Klyte.TouchThis.TextureAtlas;
-using Klyte.TouchThis.Utils;
 using System.Collections;
 using UnityEngine;
 
@@ -9,36 +7,35 @@ namespace Klyte.TouchThis
 {
     public class TTTController : MonoBehaviour
     {
-        private UIButton m_openTTTPanelButton;
-        public UIButton ToolButton => m_openTTTPanelButton;
+        public UIButton ToolButton { get; private set; }
 
         public void Start()
         {
 
             UITabstrip toolStrip = ToolsModifierControl.mainToolbar.GetComponentInChildren<UITabstrip>();
-            m_openTTTPanelButton = toolStrip.AddTab();
-            this.m_openTTTPanelButton.size = new Vector2(49f, 49f);
-            this.m_openTTTPanelButton.name = "TouchThisButton";
-            this.m_openTTTPanelButton.tooltip = "Touch This Tool (v" + TouchThisToolMod.Version + ")";
-            this.m_openTTTPanelButton.relativePosition = new Vector3(0f, 5f);
-            toolStrip.AddTab("TouchThisButton", this.m_openTTTPanelButton.gameObject, null, null);
-            m_openTTTPanelButton.atlas = TTTCommonTextureAtlas.instance.Atlas;
-            m_openTTTPanelButton.normalBgSprite = "TouchThisIconSmall";
-            m_openTTTPanelButton.focusedFgSprite = "ToolbarIconGroup6Focused";
-            m_openTTTPanelButton.hoveredFgSprite = "ToolbarIconGroup6Hovered";
+            ToolButton = toolStrip.AddTab();
+            ToolButton.size = new Vector2(49f, 49f);
+            ToolButton.name = "TouchThisButton";
+            ToolButton.tooltip = "Touch This Tool (v" + TouchThisToolMod.Version + ")";
+            ToolButton.relativePosition = new Vector3(0f, 5f);
+            toolStrip.AddTab("TouchThisButton", ToolButton.gameObject, null, null);
+            ToolButton.atlas = TTTCommonTextureAtlas.instance.Atlas;
+            ToolButton.normalBgSprite = "TouchThisIconSmall";
+            ToolButton.focusedFgSprite = "ToolbarIconGroup6Focused";
+            ToolButton.hoveredFgSprite = "ToolbarIconGroup6Hovered";
             FindObjectOfType<ToolController>().gameObject.AddComponent<TouchThisTool>();
-            this.m_openTTTPanelButton.eventButtonStateChanged += delegate (UIComponent c, UIButton.ButtonState s)
+            ToolButton.eventButtonStateChanged += delegate (UIComponent c, UIButton.ButtonState s)
             {
                 TouchThisToolMod.Instance.ShowVersionInfoPopup();
                 StartCoroutine(ToggleTool());
             };
         }
 
-        private  IEnumerator ToggleTool()
+        private IEnumerator ToggleTool()
         {
             yield return 0;
             InfoManager.instance.SetCurrentMode(InfoManager.InfoMode.None, InfoManager.SubInfoMode.None);
-            TouchThisTool.instance.enabled = (m_openTTTPanelButton.state == UIButton.ButtonState.Focused);
+            TouchThisTool.instance.enabled = (ToolButton.state == UIButton.ButtonState.Focused);
         }
 
     }

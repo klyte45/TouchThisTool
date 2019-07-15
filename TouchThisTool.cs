@@ -1,11 +1,6 @@
 ﻿using ColossalFramework;
-using ColossalFramework.Math;
-using ColossalFramework.UI;
 using Klyte.Commons;
 using Klyte.Commons.Utils;
-using Klyte.TouchThis.Utils;
-using System;
-using System.Diagnostics;
 using UnityEngine;
 
 namespace Klyte.TouchThis
@@ -27,7 +22,7 @@ namespace Klyte.TouchThis
 
                 Singleton<NetManager>.instance.m_segments.m_buffer[m_hoverSegment].m_flags &= ~NetSegment.Flags.Untouchable;
 
-                var effectInfo = Singleton<NetManager>.instance.m_properties.m_placementEffect;
+                EffectInfo effectInfo = Singleton<NetManager>.instance.m_properties.m_placementEffect;
 
                 EffectInfo.SpawnArea spawnArea = new EffectInfo.SpawnArea(new Vector3(), new Vector3(), 0);
                 Singleton<EffectManager>.instance.DispatchEffect(effectInfo, id, spawnArea, Vector3.zero, 0f, 1f, Singleton<AudioManager>.instance.DefaultGroup, 0u, true);
