@@ -1,4 +1,3 @@
-﻿TTTv3
-	- Removed Klyte Commons' dependency
-	- Performance improvements
-	- Fixed: tool needs double click to work
+﻿<color #AA44FF>TTTv4.0</color>
+	- NEW LOCATION: now under <sprite K45_K45Button> button - select the tab to enable the tool
+	- Added underground view toggle feature

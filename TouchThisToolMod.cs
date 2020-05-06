@@ -1,33 +1,19 @@
-using ColossalFramework.UI;
-using Klyte.Commons.Extensors;
 using Klyte.Commons.Interfaces;
-using Klyte.Commons.Utils;
-using Klyte.TouchThis.TextureAtlas;
-using Klyte.TouchThis.Utils;
 using System.Reflection;
-using static Klyte.TouchThis.TextureAtlas.TTTCommonTextureAtlas;
 
-[assembly: AssemblyVersion("3.0.0.1")]
+[assembly: AssemblyVersion("4.0.0.0")]
 namespace Klyte.TouchThis
 {
-    public class TouchThisToolMod : BasicIUserMod<TouchThisToolMod, TTTResourceLoader, TTTController, TTTCommonTextureAtlas, UICustomControl, SpriteNames>
+    public class TouchThisToolMod : BasicIUserMod<TouchThisToolMod, TTTController, TTTPanel>
     {
-        public TouchThisToolMod() => Construct();
-
         public override string SimpleName => "Touch This! Tool";
 
         public override string Description => "Tool for unlocking freeze segments to update and/or delete them. Util for buildings' roads.";
 
-        public override void DoErrorLog(string fmt, params object[] args) => LogUtils.DoErrorLog(fmt, args);
-
-        public override void DoLog(string fmt, params object[] args) => LogUtils.DoLog(fmt, args);
-
-        public override void LoadSettings()
+        protected override void OnLevelLoadingInternal()
         {
-        }
-
-        public override void TopSettingsUI(UIHelperExtension ext)
-        {
+            ToolController tc = UnityEngine.Object.FindObjectOfType<ToolController>();
+            tc.gameObject.AddComponent<TouchThisTool>();
         }
     }
 }

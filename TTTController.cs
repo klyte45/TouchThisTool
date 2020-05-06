@@ -1,41 +1,34 @@
 ﻿using ColossalFramework.UI;
-using Klyte.TouchThis.TextureAtlas;
+using Klyte.Commons.Interfaces;
+using Klyte.Commons.Utils;
 using System.Collections;
-using UnityEngine;
 
 namespace Klyte.TouchThis
 {
-    public class TTTController : MonoBehaviour
+    public class TTTController : BaseController<TouchThisToolMod, TTTController>
     {
+        public const string FOLDER_NAME = "TouchThisTool";
         public UIButton ToolButton { get; private set; }
 
-        public void Start()
+        internal void ToggleTool(bool newState, InfoManager.InfoMode viewMode, InfoManager.SubInfoMode submode)
         {
-
-            UITabstrip toolStrip = ToolsModifierControl.mainToolbar.GetComponentInChildren<UITabstrip>();
-            ToolButton = toolStrip.AddTab();
-            ToolButton.size = new Vector2(49f, 49f);
-            ToolButton.name = "TouchThisButton";
-            ToolButton.tooltip = "Touch This Tool (v" + TouchThisToolMod.Version + ")";
-            ToolButton.relativePosition = new Vector3(0f, 5f);
-            toolStrip.AddTab("TouchThisButton", ToolButton.gameObject, null, null);
-            ToolButton.atlas = TTTCommonTextureAtlas.instance.Atlas;
-            ToolButton.normalBgSprite = "TouchThisIconSmall";
-            ToolButton.focusedFgSprite = "ToolbarIconGroup6Focused";
-            ToolButton.hoveredFgSprite = "ToolbarIconGroup6Hovered";
-            FindObjectOfType<ToolController>().gameObject.AddComponent<TouchThisTool>();
-            ToolButton.eventButtonStateChanged += delegate (UIComponent c, UIButton.ButtonState s)
+            LogUtils.DoWarnLog($"A[{newState}] viewMode, submode = {viewMode},{submode}");
+            LogUtils.DoWarnLog($"B[{newState}] viewMode, submode = {viewMode},{submode}");
+            if (newState)
             {
-                TouchThisToolMod.Instance.ShowVersionInfoPopup();
-                StartCoroutine(ToggleTool());
-            };
-        }
+                InfoManager.instance.SetCurrentMode(viewMode, submode);
+            }
+            else
+            {
+                InfoManager.instance.SetCurrentMode(InfoManager.InfoMode.None, 0);
+            }
 
-        private IEnumerator ToggleTool()
+            StartCoroutine(ToggleTool_Internal(newState));
+        }
+        private IEnumerator ToggleTool_Internal(bool newState)
         {
             yield return 0;
-            InfoManager.instance.SetCurrentMode(InfoManager.InfoMode.None, InfoManager.SubInfoMode.None);
-            TouchThisTool.instance.enabled = (ToolButton.state == UIButton.ButtonState.Focused);
+            TouchThisTool.instance.enabled = newState;
         }
 
     }
