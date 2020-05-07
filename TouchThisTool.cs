@@ -40,6 +40,12 @@ namespace Klyte.TouchThis
                 return;
             }
         }
+
+        public new void OnDestroy()
+        {
+            base.OnDestroy();
+            instance = null;
+        }
     }
 
 }
