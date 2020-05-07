@@ -1,7 +1,7 @@
 using Klyte.Commons.Interfaces;
 using System.Reflection;
 
-[assembly: AssemblyVersion("4.0.0.1")]
+[assembly: AssemblyVersion("4.0.0.3")]
 namespace Klyte.TouchThis
 {
     public class TouchThisToolMod : BasicIUserMod<TouchThisToolMod, TTTController, TTTPanel>

@@ -13,7 +13,7 @@ namespace Klyte.TouchThis.Overrides
 
         public static void OnToolChanged(ref ToolBase tool)
         {
-            if (TouchThisTool.instance?.enabled == true && tool != TouchThisTool.instance)
+            if (TouchThisTool.instance?.enabled == true && tool != TouchThisTool.instance && TTTPanel.Instance.MainPanel.isVisible)
             {
                 TouchThisToolMod.Instance.UnselectTab();
             }

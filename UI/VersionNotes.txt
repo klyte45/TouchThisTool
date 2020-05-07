@@ -2,3 +2,7 @@
 	- NEW LOCATION: now under <sprite K45_K45Button> button - select the tab to enable the tool
 	- Added underground view toggle feature
 	<color #FFFF00>- Re-enabled the "Back to the main menu" button</color>
+<color #FF8888>r2</color>
+	- Removed unnecessary log entries on output log
+<color #FF8888>r3</color>
+	- Fixed tool unselection when changing tab/closing the <sprite K45_K45Button> button without selecting another tool

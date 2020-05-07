@@ -266,7 +266,6 @@
     <Content Include="commons\UI\Images\lineFormats.psd" />
     <Content Include="commons\UI\Images\sprites.psd" />
     <Content Include="UI\Images\sprites.psd" />
-    <EmbeddedResource Include="TLMVersion.txt" />
     <EmbeddedResource Include="UI\VersionNotes.txt" />
   </ItemGroup>
   <ItemGroup>
