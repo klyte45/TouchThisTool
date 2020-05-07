@@ -1,3 +1,4 @@
 ﻿<color #AA44FF>TTTv4.0</color>
 	- NEW LOCATION: now under <sprite K45_K45Button> button - select the tab to enable the tool
 	- Added underground view toggle feature
+	<color #FFFF00>- Re-enabled the "Back to the main menu" button</color>
