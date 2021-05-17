@@ -7,4 +7,6 @@
 <color #FF8888>r3</color>
 	- Fixed tool unselection when changing tab/closing the <sprite K45_K45Button> button without selecting another tool
 <color #FF8888>r4</color>
-	- Fixed bug preventing a second load after unloading a city
+	- Fixed bug preventing a second load after unloading a city	
+<color #FF8888>r5 (17/MAY/21):</color> 
+	- Fixing garbled text issues when loading the city.
