@@ -161,6 +161,7 @@
     <Compile Include="commons\Utils\UtilitiesClasses\NumberArrays.cs" />
     <Compile Include="commons\Utils\UtilitiesClasses\PriorityQueue.cs" />
     <Compile Include="commons\Utils\UtilitiesClasses\Range.cs" />
+    <Compile Include="commons\Utils\UtilitiesClasses\NetAIWrapper.cs" />
     <Compile Include="commons\Utils\UtilitiesClasses\SimpleEnumerableList.cs" />
     <Compile Include="commons\Utils\UtilitiesClasses\SimpleNonSequentialList.cs" />
     <Compile Include="commons\Utils\UtilitiesClasses\SimpleXmlDictionary.cs" />
@@ -283,9 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UI\Images\%25K45_TTT_Icon.png" />
-    <Content Include="commons\UI\Images\%25K45_Dropper.png" />
-    <Content Include="commons\UI\Images\%25K45_PaintBucket.png" />
-    <Content Include="commons\UI\Images\%25K45_Steam.png" />
+    <EmbeddedResource Include="commons\UI\Images\%25K45_Dropper.png" />
+    <EmbeddedResource Include="commons\UI\Images\%25K45_PaintBucket.png" />
+    <EmbeddedResource Include="commons\UI\Images\%25K45_Steam.png" />
     <Content Include="commons\UI\Images\base.psd" />
     <Content Include="commons\UI\Images\sprites.psd" />
     <Content Include="UI\Images\sprites.psd" />
@@ -328,8 +329,8 @@
   <ItemGroup>
     <None Include="commons\LICENSE" />
     <None Include="commons\README.md" />
-    <None Include="commons\UI\i18n\cn.properties" />
-    <None Include="commons\UI\i18n\ja.properties" />
+    <EmbeddedResource Include="commons\UI\i18n\cn.properties" />
+    <EmbeddedResource Include="commons\UI\i18n\ja.properties" />
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
