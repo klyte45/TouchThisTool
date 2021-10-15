@@ -1,5 +1,5 @@
 using ColossalFramework.UI;
-using Klyte.Commons.Extensors;
+using Klyte.Commons.Extensions;
 using Klyte.Commons.Interfaces;
 using Klyte.Commons.Utils;
 using UnityEngine;

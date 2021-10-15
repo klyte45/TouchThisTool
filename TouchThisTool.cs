@@ -36,7 +36,7 @@ namespace Klyte.TouchThis
             if (m_hoverSegment != 0)
             {
                 Color toolColor = (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0 ? m_hoverColor : m_removeColor;
-                RenderOverlay(cameraInfo, toolColor, m_hoverSegment);
+                RenderOverlayUtils.RenderNetSegmentOverlay(cameraInfo, toolColor, m_hoverSegment);
                 return;
             }
         }

@@ -64,46 +64,56 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="commons\Extensors\Redirector.cs" />
-    <Compile Include="commons\Extensors\UI\CheckboxOrdernatedList.cs" />
-    <Compile Include="commons\Extensors\UI\NumberedColorList.cs" />
-    <Compile Include="commons\Extensors\UI\TextList.cs" />
-    <Compile Include="commons\Extensors\UI\UIHelperExtended.cs" />
-    <Compile Include="commons\Extensors\UI\UITabstripAutoResize.cs" />
+    <Compile Include="commons\Extensions\Redirector.cs" />
+    <Compile Include="commons\Extensions\UI\CheckboxOrdernatedList.cs" />
+    <Compile Include="commons\Extensions\UI\NumberedColorList.cs" />
+    <Compile Include="commons\Extensions\UI\TextList.cs" />
+    <Compile Include="commons\Extensions\UI\UIHelperExtended.cs" />
+    <Compile Include="commons\Extensions\UI\UITabstripAutoResize.cs" />
+    <Compile Include="commons\Interfaces\BaseController.cs" />
     <Compile Include="commons\Interfaces\BasicIUserMod.cs" />
     <Compile Include="commons\Interfaces\BasicIUserModSimplified.cs" />
     <Compile Include="commons\Interfaces\BasicKPanel.cs" />
-    <Compile Include="commons\Interfaces\IController.cs" />
     <Compile Include="commons\Interfaces\IEnumerableIndex.cs" />
     <Compile Include="commons\Interfaces\IFontConfigContainer.cs" />
     <Compile Include="commons\Interfaces\IIdentifiable.cs" />
     <Compile Include="commons\Interfaces\ILibable.cs" />
+    <Compile Include="commons\Interfaces\ILibableAsContainer.cs" />
     <Compile Include="commons\Interfaces\IPropColorContainer.cs" />
     <Compile Include="commons\Interfaces\ITimeable.cs" />
     <Compile Include="commons\Interfaces\IViewStartActions.cs" />
     <Compile Include="commons\Interfaces\Warehouse\ConfigWarehouseBase.cs" />
-    <Compile Include="commons\Interfaces\Warehouse\DataExtensorBase.cs" />
+    <Compile Include="commons\Interfaces\Warehouse\DataContainer.cs" />
+    <Compile Include="commons\Interfaces\Warehouse\DataExtensionBase.cs" />
+    <Compile Include="commons\Interfaces\Warehouse\DataExtensionLibBase.cs" />
     <Compile Include="commons\Interfaces\Warehouse\ExtensionInterface2LevelIntImpl.cs" />
     <Compile Include="commons\Interfaces\Warehouse\ExtensionInterfaceDictionaryByEnumImpl.cs" />
     <Compile Include="commons\Interfaces\Warehouse\ExtensionInterfaceDictionaryByUintImpl.cs" />
     <Compile Include="commons\Interfaces\Warehouse\ExtensionInterfaceDictionaryStructValSimplImpl.cs" />
+    <Compile Include="commons\Interfaces\Warehouse\ExtensionInterfaceIndexableImpl.cs" />
     <Compile Include="commons\Interfaces\Warehouse\ExtensionInterfaceListImpl .cs" />
     <Compile Include="commons\Interfaces\Warehouse\ExtensionInterfaceSingleImpl.cs" />
-    <Compile Include="commons\Interfaces\Warehouse\ExtensorContainer.cs" />
-    <Compile Include="commons\Interfaces\Warehouse\IDataExtensor.cs" />
-    <Compile Include="commons\Interfaces\Warehouse\IDataExtensorLegacy.cs" />
-    <Compile Include="commons\Redirectors\UIDynamicFontRendererRedirector.cs" />
+    <Compile Include="commons\Interfaces\Warehouse\IDataExtension.cs" />
+    <Compile Include="commons\Interfaces\Warehouse\IDataExtensionLegacy.cs" />
+    <Compile Include="commons\Libraries\BasicLib.cs" />
+    <Compile Include="commons\Libraries\LibBaseData.cs" />
+    <Compile Include="commons\Libraries\LibBaseFile.cs" />
     <Compile Include="commons\Redirectors\UIDynamicPanelsRedirector.cs" />
     <Compile Include="commons\Redirectors\UIViewRedirector.cs" />
+    <Compile Include="commons\Redirectors\UIWorkshopAssetRedirector.cs" />
     <Compile Include="commons\Tools\BasicBuildingTool.cs" />
     <Compile Include="commons\Tools\BasicNetTool.cs" />
+    <Compile Include="commons\Tools\BasicVehicleTool.cs" />
     <Compile Include="commons\UI\AVOPreviewRenderer.cs" />
+    <Compile Include="commons\UI\BasicRulesList.cs" />
+    <Compile Include="commons\UI\DefaultEditorUILib.cs" />
     <Compile Include="commons\UI\i18n\KlyteLocaleManager.cs" />
     <Compile Include="commons\UI\K45DialogControl.cs" />
     <Compile Include="commons\UI\SpriteNames\CommonsSpriteNames.cs" />
     <Compile Include="commons\UI\SpriteNames\LineIconSpriteNames.cs" />
     <Compile Include="commons\UI\TLMAgesChartPanel.cs" />
     <Compile Include="commons\UI\TLMWorkersChartPanel.cs" />
+    <Compile Include="commons\UI\UIPagingBar.cs" />
     <Compile Include="commons\UI\UIRadialChartExtended.cs" />
     <Compile Include="commons\Utils\BuildingUtils.cs" />
     <Compile Include="commons\Utils\DistrictUtils.cs" />
@@ -114,10 +124,14 @@
     <Compile Include="commons\Utils\KlyteResourceLoader.cs" />
     <Compile Include="commons\Utils\LogUtils.cs" />
     <Compile Include="commons\Utils\MapUtils.cs" />
+    <Compile Include="commons\Utils\MeshUtils.cs" />
     <Compile Include="commons\Utils\NumberingUtils.cs" />
     <Compile Include="commons\Utils\PastelConfig.cs" />
+    <Compile Include="commons\Utils\PluginUtils.cs" />
+    <Compile Include="commons\Utils\PrefabIndexes.cs" />
     <Compile Include="commons\Utils\RandomPastelColorGenerator.cs" />
     <Compile Include="commons\Utils\ReflectionUtils.cs" />
+    <Compile Include="commons\Utils\RenderOverlayUtils.cs" />
     <Compile Include="commons\Utils\RoadSearchUtils.cs" />
     <Compile Include="commons\Utils\SegmentUtils.cs" />
     <Compile Include="commons\Utils\SerializationUtils.cs" />
@@ -127,13 +141,16 @@
     <Compile Include="commons\Utils\StructExtensions\Int32Extensions.cs" />
     <Compile Include="commons\Utils\StructExtensions\NetSegmentExtensions.cs" />
     <Compile Include="commons\Utils\StructExtensions\PathUnitExtensions.cs" />
+    <Compile Include="commons\Utils\StructExtensions\StringExtensions.cs" />
     <Compile Include="commons\Utils\StructExtensions\Vector2Extensions.cs" />
     <Compile Include="commons\Utils\StructExtensions\Vector3Extensions.cs" />
     <Compile Include="commons\Utils\TabCommons.cs" />
     <Compile Include="commons\Utils\TextureAtlasUtils.cs" />
+    <Compile Include="commons\Utils\TextureFilter.cs" />
     <Compile Include="commons\Utils\TextureRenderUtils.cs" />
     <Compile Include="commons\Utils\TextureScaler.cs" />
     <Compile Include="commons\Utils\TextUtils.cs" />
+    <Compile Include="commons\Utils\UITemplateUtils.cs" />
     <Compile Include="commons\Utils\UtilitiesClasses\CardinalPoint .cs" />
     <Compile Include="commons\Utils\UtilitiesClasses\ColorList.cs" />
     <Compile Include="commons\Utils\UtilitiesClasses\CoroutineWithData.cs" />
@@ -152,6 +169,8 @@
     <Compile Include="commons\Utils\UtilitiesClasses\SimpleXmlList.cs" />
     <Compile Include="commons\Utils\UtilitiesClasses\TimeableList.cs" />
     <Compile Include="commons\Utils\UtilitiesClasses\Tuple.cs" />
+    <Compile Include="commons\Utils\UtilitiesClasses\VectorsXml.cs" />
+    <Compile Include="commons\Utils\UtilitiesClasses\XmlDictionary.cs" />
     <Compile Include="commons\Utils\VehicleUtils.cs" />
     <Compile Include="commons\Utils\XmlUtils.cs" />
     <Compile Include="commons\Utils\ZipUtils.cs" />
@@ -167,37 +186,6 @@
     <EmbeddedResource Include="commons\UI\i18n\fr.properties" />
     <EmbeddedResource Include="commons\UI\i18n\pt.properties" />
     <EmbeddedResource Include="commons\UI\i18n\ru.properties" />
-    <EmbeddedResource Include="UI\i18n\cn.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\i18n\de.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\i18n\en.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\i18n\es.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\i18n\fr.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\i18n\ko.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\i18n\nl.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\i18n\pl.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\i18n\pt.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\i18n\ru.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_Icon.png" />
     <EmbeddedResource Include="commons\UI\Images\%25K45_24hLineIcon.png" />
     <EmbeddedResource Include="commons\UI\Images\%25K45_AbsoluteMode.png" />
     <EmbeddedResource Include="commons\UI\Images\%25K45_AutoColorIcon.png" />
@@ -263,11 +251,42 @@
     <EmbeddedResource Include="commons\UI\Images\%25K45_Unlock.png" />
     <EmbeddedResource Include="commons\UI\Images\%25K45_Up.png" />
     <EmbeddedResource Include="commons\UI\Images\%25K45_X.png" />
-    <Content Include="commons\UI\Images\base.psd" />
     <EmbeddedResource Include="commons\UI\Images\bordersDescriptor.txt" />
-    <Content Include="commons\UI\Images\lineFormat.png" />
-    <Content Include="commons\UI\Images\lineFormat.psd" />
-    <Content Include="commons\UI\Images\lineFormats.psd" />
+    <EmbeddedResource Include="UI\i18n\cn.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\i18n\de.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\i18n\en.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\i18n\es.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\i18n\fr.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\i18n\ko.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\i18n\nl.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\i18n\pl.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\i18n\pt.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\i18n\ru.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_Icon.png" />
+    <Content Include="commons\UI\Images\%25K45_Dropper.png" />
+    <Content Include="commons\UI\Images\%25K45_PaintBucket.png" />
+    <Content Include="commons\UI\Images\%25K45_Steam.png" />
+    <Content Include="commons\UI\Images\base.psd" />
     <Content Include="commons\UI\Images\sprites.psd" />
     <Content Include="UI\Images\sprites.psd" />
     <EmbeddedResource Include="UI\VersionNotes.txt" />
@@ -307,7 +326,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="commons\LICENSE" />
     <None Include="commons\README.md" />
+    <None Include="commons\UI\i18n\cn.properties" />
+    <None Include="commons\UI\i18n\ja.properties" />
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
