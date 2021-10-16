@@ -8,7 +8,7 @@
     <ProjectGuid>{A6E6D1D4-AE31-4868-99E9-1C501B8174A7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Klyte</RootNamespace>
-    <AssemblyName>TouchThisTool</AssemblyName>
+    <AssemblyName>UpgradeUntouchable</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <LangVersion>8.0</LangVersion>
@@ -289,6 +289,31 @@
     <EmbeddedResource Include="commons\UI\Images\%25K45_Steam.png" />
     <Content Include="commons\UI\Images\base.psd" />
     <Content Include="commons\UI\Images\sprites.psd" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_BridgeMode.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_BridgeModeDisabled.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_BridgeModeFocused.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_BridgeModeHovered.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_BridgeModePressed.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_ElevatedMode.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_ElevatedModeDisabled.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_ElevatedModeFocused.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_ElevatedModeHovered.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_ElevatedModePressed.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_GroundMode.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_GroundModeDisabled.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_GroundModeFocused.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_GroundModeHovered.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_GroundModePressed.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_NormalMode.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_NormalModeDisabled.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_NormalModeFocused.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_NormalModeHovered.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_NormalModePressed.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_TunnelMode.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_TunnelModeDisabled.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_TunnelModeFocused.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_TunnelModeHovered.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_TTT_TunnelModePressed.png" />
     <Content Include="UI\Images\sprites.psd" />
     <EmbeddedResource Include="UI\VersionNotes.txt" />
   </ItemGroup>
@@ -336,12 +361,12 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy /Y "$(TargetPath)" "$(ProjectDir)\_requiredDLLs"
 xcopy /Y "$(TargetDir)0Harmony.dll" "$(ProjectDir)\_requiredDLLs\"
-xcopy /Y "$(ProjectDir)\_requiredDLLs\*" "S:\Steam\steamapps\workshop\content\255710\1393797695\"
-xcopy /Y "$(ProjectDir)\_requiredDLLs\*" "C:\Users\Leandro\AppData\Local\Colossal Order\Cities_Skylines\Addons\Mods\TTT\"</PostBuildEvent>
+rem xcopy /Y "$(ProjectDir)\_requiredDLLs\*" "S:\Steam\steamapps\workshop\content\255710\???\"
+xcopy /Y "$(ProjectDir)\_requiredDLLs\*" "C:\Users\Leandro\AppData\Local\Colossal Order\Cities_Skylines\Addons\Mods\UU\"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>del /q "S:\Steam\steamapps\workshop\content\255710\1393797695"
+    <PreBuildEvent>rem del /q "S:\Steam\steamapps\workshop\content\255710\???"
 del /q "$(ProjectDir)\_requiredDLLs"
-del /q  "C:\Users\Leandro\AppData\Local\Colossal Order\Cities_Skylines\Addons\Mods\TTT\*"</PreBuildEvent>
+del /q  "C:\Users\Leandro\AppData\Local\Colossal Order\Cities_Skylines\Addons\Mods\UU\*"</PreBuildEvent>
   </PropertyGroup>
 </Project>

@@ -7,7 +7,7 @@ using System.Linq;
 using UnityEngine;
 using static Klyte.Commons.Utils.NetAIWrapper;
 
-namespace Klyte.TouchThis
+namespace Klyte.UpgradeUntouchable
 {
 
     public class TouchThisTool : BasicNetTool<TouchThisTool>
@@ -26,12 +26,24 @@ namespace Klyte.TouchThis
         private NetAIWrapper m_oldAI;
         private ElevationType m_oldType;
         private string m_cachedInfoCompareText;
-        private bool m_mustConfirm;
 
         private NetTool.ControlPoint[] m_controlPoints = new NetTool.ControlPoint[3];
         private int m_controlPointCount;
 
+        public void SetUpgradeTarget(NetInfo targetInfo)
+        {
+            if (!(targetInfo.m_netAI is DamAI) && !(targetInfo.m_netAI is WaterPipeAI))
+            {
+                m_upgradeAI = new NetAIWrapper(targetInfo.m_netAI);
+                TTTPanel.Instance.UpdateAvailabilities(m_upgradeAI);
+            }
 
+        }
+
+        public void SetUpgradeMode(ElevationType elevationType)
+        {
+            m_targetType = elevationType;
+        }
 
 
         protected override void OnLeftClick()
@@ -59,10 +71,7 @@ namespace Klyte.TouchThis
                 {
                     if (Event.current.control)
                     {
-                        if (!(SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI))
-                        {
-                            m_upgradeAI = new NetAIWrapper(Singleton<NetManager>.instance.m_segments.m_buffer[m_hoverSegment].Info.m_netAI);
-                        }
+                        SetUpgradeTarget(SegmentBuffer[m_hoverSegment].Info);
                     }
                     else if (!(m_upgradeAI is null) && (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0 && !(m_oldAI == m_upgradeAI && m_oldType == m_effectiveTargetType))
                     {
@@ -231,7 +240,6 @@ namespace Klyte.TouchThis
 
                                 var isSameSubService = oldInfo.m_class.m_subService == targetUpgradeInfo.m_class.m_subService;
 
-                                m_mustConfirm = false;
                                 var observations = new List<string>();
                                 if (!isSameWidth)
                                 {
@@ -239,7 +247,6 @@ namespace Klyte.TouchThis
                                 }
                                 if (!isSameHasStop)
                                 {
-                                    m_mustConfirm = true;
                                     observations.Add($"<color red>{Locale.Get("K45_TTT_DIFFERENTHASSTOP")}: {Locale.Get("K45_TTT_" + (oldHasStop ? "HASSTOP" : "NOSTOP"))} => {Locale.Get("K45_TTT_" + (newHasStop ? "HASSTOP" : "NOSTOP"))}</color>");
                                 }
                                 if (!isSameSegElvType)
@@ -253,12 +260,8 @@ namespace Klyte.TouchThis
 
                                 m_cachedInfoCompareText = string.Join("\n", observations.ToArray());
                             }
-                            base.ShowToolInfo(true, (text + "\n" + m_cachedInfoCompareText).Trim(), m_raycastHit);
                         }
-                        else
-                        {
-                            base.ShowToolInfo(true, text, m_raycastHit);
-                        }
+                        base.ShowToolInfo(true, (text + "\n" + m_cachedInfoCompareText).Trim(), m_raycastHit);
                     }
                     else
                     {
@@ -274,7 +277,7 @@ namespace Klyte.TouchThis
             {
                 base.ShowToolInfo(false, null, Vector3.zero);
             }
-            TTTPanel.Instance.m_currentlyUpgradingLabel.suffix = m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType)?.GetUncheckedLocalizedTitle() ?? Locale.Get("K45_TTT_NONESELECTED");
+            TTTPanel.Instance.CurrentDisplayingNet = m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType)?.GetUncheckedLocalizedTitle() ?? Locale.Get("K45_TTT_NONESELECTED");
         }
 
         private IEnumerator<bool> CreateNode(bool switchDirection, ushort buildingStart, ushort buildingEnd)
