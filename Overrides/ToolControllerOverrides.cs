@@ -13,11 +13,11 @@ namespace Klyte.UpgradeUntouchable.Overrides
 
         public static void OnToolChanged(ref ToolBase tool)
         {
-            if (TouchThisTool.instance?.enabled == true && tool != TouchThisTool.instance && (TTTPanel.Instance?.MainPanel?.isVisible ?? false))
+            if (UpgradeUntouchableTool.instance?.enabled == true && tool != UpgradeUntouchableTool.instance && (UUPanel.Instance?.MainPanel?.isVisible ?? false))
             {
-                TTTPanel.Instance?.DeselectTool();
+                UUPanel.Instance?.DeselectTool();
             }
-            TTTPanel.Instance?.UpdatePickerState(tool is NetTool);
+            UUPanel.Instance?.UpdatePickerState(tool is NetTool);
         }
 
     }

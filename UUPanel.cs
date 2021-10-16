@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Klyte.UpgradeUntouchable
 {
-    public class TTTPanel : BasicKPanel<TouchThisToolMod, TTTController, TTTPanel>
+    public class UUPanel : BasicKPanel<UpgradeUntouchableMod, UUController, UUPanel>
     {
         public override float PanelWidth => 500;
 
@@ -32,36 +32,36 @@ namespace Klyte.UpgradeUntouchable
             layoutPanel.autoLayoutPadding = new RectOffset(0, 0, 10, 10);
             var uiHelper = new UIHelperExtension(layoutPanel);
 
-            KlyteMonoUtils.LimitWidthAndBox(uiHelper.AddCheckboxLocale("K45_TTT_SHOWUNDERGROUNDVIEW", false, OnUndergroundChange).label, PanelWidth - 40); ;
-            var classicMode = uiHelper.AddCheckboxLocale("K45_TTT_CLASSICTOUCHTHISMODE", false, OnClassicModeChanged);
+            KlyteMonoUtils.LimitWidthAndBox(uiHelper.AddCheckboxLocale("K45_UU_SHOWUNDERGROUNDVIEW", false, OnUndergroundChange).label, PanelWidth - 40); ;
+            var classicMode = uiHelper.AddCheckboxLocale("K45_UU_CLASSICTOUCHTHISMODE", false, OnClassicModeChanged);
             classicMode.label.processMarkup = true;
             KlyteMonoUtils.LimitWidthAndBox(classicMode.label, PanelWidth - 10);
 
 
 
             m_currentlyUpgradingLabel = UIHelperExtension.AddLabel(uiHelper.Self, "\n\t", PanelWidth - 50, out UIPanel containerUpgrading);
-            m_currentlyUpgradingLabel.prefix = Locale.Get("K45_TTT_CURRENTLYUPGRADINGTO");
+            m_currentlyUpgradingLabel.prefix = Locale.Get("K45_UU_CURRENTLYUPGRADINGTO");
             KlyteMonoUtils.CreateUIElement(out m_getFromNetTool, containerUpgrading.transform, "getFromNetTool", new Vector4(containerUpgrading.width, 18, 36, 36));
             KlyteMonoUtils.InitButton(m_getFromNetTool, false, "OptionBase");
             m_getFromNetTool.normalFgSprite = KlyteResourceLoader.GetDefaultSpriteNameFor(CommonsSpriteNames.K45_Dropper);
             m_getFromNetTool.eventClicked += (x, y) =>
             {
                 var netTool = FindObjectOfType<NetTool>();
-                TouchThisTool.instance.SetUpgradeTarget(netTool.m_prefab);
+                UpgradeUntouchableTool.instance.SetUpgradeTarget(netTool.m_prefab);
                 m_modes.selectedIndex = 0;
             };
-            m_getFromNetTool.tooltipLocaleID = "K45_TTT_PICKFROMCURRENTNETTOOLITEM";
+            m_getFromNetTool.tooltipLocaleID = "K45_UU_PICKFROMCURRENTNETTOOLITEM";
 
             KlyteMonoUtils.CreateUIElement(out m_modes, layoutPanel.transform, "modePanel", new Vector4(0, 0, PanelWidth - 10, 36));
 
 
             foreach (var btnName in new string[]
             {
-                "K45_TTT_NormalMode",
-                "K45_TTT_GroundMode",
-                "K45_TTT_ElevatedMode",
-                "K45_TTT_BridgeMode",
-                "K45_TTT_TunnelMode"
+                "K45_UU_NormalMode",
+                "K45_UU_GroundMode",
+                "K45_UU_ElevatedMode",
+                "K45_UU_BridgeMode",
+                "K45_UU_TunnelMode"
             })
             {
                 UIButton btn;
@@ -75,7 +75,7 @@ namespace Klyte.UpgradeUntouchable
             m_modes.eventSelectedIndexChanged += (w, x) => ResetTool();
             UpdateAvailabilities(null);
 
-            UIHelperExtension.AddLabel(uiHelper.Self, Locale.Get("K45_TTT_TIP_PRESSCTRLTOPICK"), PanelWidth - 50).textScale = 0.8f;
+            UIHelperExtension.AddLabel(uiHelper.Self, Locale.Get("K45_UU_TIP_PRESSCTRLTOPICK"), PanelWidth - 50).textScale = 0.8f;
         }
 
         public void UpdatePickerState(bool state)
@@ -115,8 +115,8 @@ namespace Klyte.UpgradeUntouchable
         {
             if (m_modes.selectedIndex >= 0)
             {
-                TouchThisToolMod.Controller?.ToggleTool(true, m_currentMode, m_currentSubMode);
-                TouchThisTool.instance.SetUpgradeMode((NetAIWrapper.ElevationType)m_modes.selectedIndex);
+                UpgradeUntouchableMod.Controller?.ToggleTool(true, m_currentMode, m_currentSubMode);
+                UpgradeUntouchableTool.instance.SetUpgradeMode((NetAIWrapper.ElevationType)m_modes.selectedIndex);
             }
         }
 
@@ -127,7 +127,7 @@ namespace Klyte.UpgradeUntouchable
         }
         private void OnClassicModeChanged(bool isChecked)
         {
-            TouchThisTool.instance.SetClassicMode(isChecked);
+            UpgradeUntouchableTool.instance.SetClassicMode(isChecked);
             m_currentlyUpgradingLabel.isVisible = !isChecked;
             m_modes.isVisible = !isChecked;
             m_modes.selectedIndex = 0;

@@ -11,7 +11,6 @@
     <AssemblyName>UpgradeUntouchable</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>True</DebugSymbols>
@@ -176,11 +175,11 @@
     <Compile Include="commons\Utils\XmlUtils.cs" />
     <Compile Include="commons\Utils\ZipUtils.cs" />
     <Compile Include="Overrides\ToolControllerOverrides.cs" />
-    <Compile Include="TouchThisTool.cs" />
+    <Compile Include="UpgradeUntouchableTool.cs" />
     <Compile Include="CommonProperties.cs" />
-    <Compile Include="TTTPanel.cs" />
-    <Compile Include="TTTController.cs" />
-    <Compile Include="TouchThisToolMod.cs" />
+    <Compile Include="UUPanel.cs" />
+    <Compile Include="UUController.cs" />
+    <Compile Include="UpgradeUntouchableMod.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="commons\UI\i18n\en.properties" />
@@ -283,37 +282,37 @@
     <EmbeddedResource Include="UI\i18n\ru.properties" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_Icon.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_Icon.png" />
     <EmbeddedResource Include="commons\UI\Images\%25K45_Dropper.png" />
     <EmbeddedResource Include="commons\UI\Images\%25K45_PaintBucket.png" />
     <EmbeddedResource Include="commons\UI\Images\%25K45_Steam.png" />
     <Content Include="commons\UI\Images\base.psd" />
     <Content Include="commons\UI\Images\sprites.psd" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_BridgeMode.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_BridgeModeDisabled.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_BridgeModeFocused.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_BridgeModeHovered.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_BridgeModePressed.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_ElevatedMode.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_ElevatedModeDisabled.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_ElevatedModeFocused.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_ElevatedModeHovered.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_ElevatedModePressed.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_GroundMode.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_GroundModeDisabled.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_GroundModeFocused.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_GroundModeHovered.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_GroundModePressed.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_NormalMode.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_NormalModeDisabled.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_NormalModeFocused.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_NormalModeHovered.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_NormalModePressed.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_TunnelMode.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_TunnelModeDisabled.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_TunnelModeFocused.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_TunnelModeHovered.png" />
-    <EmbeddedResource Include="UI\Images\%25K45_TTT_TunnelModePressed.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_BridgeMode.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_BridgeModeDisabled.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_BridgeModeFocused.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_BridgeModeHovered.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_BridgeModePressed.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_ElevatedMode.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_ElevatedModeDisabled.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_ElevatedModeFocused.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_ElevatedModeHovered.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_ElevatedModePressed.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_GroundMode.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_GroundModeDisabled.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_GroundModeFocused.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_GroundModeHovered.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_GroundModePressed.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_NormalMode.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_NormalModeDisabled.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_NormalModeFocused.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_NormalModeHovered.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_NormalModePressed.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_TunnelMode.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_TunnelModeDisabled.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_TunnelModeFocused.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_TunnelModeHovered.png" />
+    <EmbeddedResource Include="UI\Images\%25K45_UU_TunnelModePressed.png" />
     <Content Include="UI\Images\sprites.psd" />
     <EmbeddedResource Include="UI\VersionNotes.txt" />
   </ItemGroup>
@@ -322,33 +321,33 @@
       <HintPath>..\..\packages\Lib.Harmony.1.2.0.1\lib\net35\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>A:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>S:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>A:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>S:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="ColossalManaged">
-      <HintPath>A:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ColossalManaged.dll</HintPath>
+      <HintPath>S:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ColossalManaged.dll</HintPath>
     </Reference>
     <Reference Include="ICities">
-      <HintPath>A:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ICities.dll</HintPath>
+      <HintPath>S:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ICities.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL" />
     <Reference Include="PopsApiWrapper">
-      <HintPath>A:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\PopsApiWrapper.dll</HintPath>
+      <HintPath>S:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\PopsApiWrapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>A:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>S:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
-      <HintPath>A:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.Networking.dll</HintPath>
+      <HintPath>S:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.Networking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>A:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>S:\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

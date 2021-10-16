@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Klyte.UpgradeUntouchable
 {
-    public class TTTController : BaseController<TouchThisToolMod, TTTController>
+    public class UUController : BaseController<UpgradeUntouchableMod, UUController>
     {
         public const string FOLDER_NAME = "TouchThisTool";
 
@@ -27,15 +27,15 @@ namespace Klyte.UpgradeUntouchable
         private IEnumerator ToggleTool_Internal(bool newState)
         {
             yield return 0;
-            if (TouchThisTool.instance.enabled && !newState)
+            if (UpgradeUntouchableTool.instance.enabled && !newState)
             {
-                TouchThisTool.instance.enabled = newState;
+                UpgradeUntouchableTool.instance.enabled = newState;
                 ToolController tc = FindObjectOfType<ToolController>();
                 tc.CurrentTool = tc.GetComponent<DefaultTool>();
             }
             else
             {
-                TouchThisTool.instance.enabled = newState;
+                UpgradeUntouchableTool.instance.enabled = newState;
             }
         }
 

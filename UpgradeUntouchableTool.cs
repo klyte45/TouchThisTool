@@ -10,7 +10,7 @@ using static Klyte.Commons.Utils.NetAIWrapper;
 namespace Klyte.UpgradeUntouchable
 {
 
-    public class TouchThisTool : BasicNetTool<TouchThisTool>
+    public class UpgradeUntouchableTool : BasicNetTool<UpgradeUntouchableTool>
     {
         private enum Mode
         {
@@ -35,7 +35,7 @@ namespace Klyte.UpgradeUntouchable
             if (!(targetInfo.m_netAI is DamAI) && !(targetInfo.m_netAI is WaterPipeAI))
             {
                 m_upgradeAI = new NetAIWrapper(targetInfo.m_netAI);
-                TTTPanel.Instance.UpdateAvailabilities(m_upgradeAI);
+                UUPanel.Instance.UpdateAvailabilities(m_upgradeAI);
             }
 
         }
@@ -204,15 +204,15 @@ namespace Klyte.UpgradeUntouchable
                 {
                     var text = string.Format(Locale.Get(Event.current.control
                         ? SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI
-                            ? "K45_TTT_NETNOTSUPPORTED"
-                            : "K45_TTT_PICKNET_PATTERN"
+                            ? "K45_UU_NETNOTSUPPORTED"
+                            : "K45_UU_PICKNET_PATTERN"
                         : (m_upgradeAI is null)
-                            ? "K45_TTT_PRESSCTRLTOPICK"
+                            ? "K45_UU_PRESSCTRLTOPICK"
                             : SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI
-                                ? "K45_TTT_NETNOTSUPPORTED"
+                                ? "K45_UU_NETNOTSUPPORTED"
                                 : (m_oldAI == m_upgradeAI && m_oldType == m_effectiveTargetType)
-                                    ? "K45_TTT_CANNOTUPGRADE_ITSELF"
-                                    : "K45_TTT_UPGRADETO_PATTERN"
+                                    ? "K45_UU_CANNOTUPGRADE_ITSELF"
+                                    : "K45_UU_UPGRADETO_PATTERN"
                         ), Event.current.control
                         ? SegmentBuffer[m_hoverSegment].Info.GetUncheckedLocalizedTitle()
                         : m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType)?.GetUncheckedLocalizedTitle());
@@ -243,19 +243,19 @@ namespace Klyte.UpgradeUntouchable
                                 var observations = new List<string>();
                                 if (!isSameWidth)
                                 {
-                                    observations.Add($"<color yellow>{Locale.Get("K45_TTT_DIFFERENTHALFWIDTHS")}: {oldInfo.m_halfWidth.ToString("0.0")} => {targetUpgradeInfo.m_halfWidth.ToString("0.0")} </color>");
+                                    observations.Add($"<color yellow>{Locale.Get("K45_UU_DIFFERENTHALFWIDTHS")}: {oldInfo.m_halfWidth.ToString("0.0")} => {targetUpgradeInfo.m_halfWidth.ToString("0.0")} </color>");
                                 }
                                 if (!isSameHasStop)
                                 {
-                                    observations.Add($"<color red>{Locale.Get("K45_TTT_DIFFERENTHASSTOP")}: {Locale.Get("K45_TTT_" + (oldHasStop ? "HASSTOP" : "NOSTOP"))} => {Locale.Get("K45_TTT_" + (newHasStop ? "HASSTOP" : "NOSTOP"))}</color>");
+                                    observations.Add($"<color red>{Locale.Get("K45_UU_DIFFERENTHASSTOP")}: {Locale.Get("K45_UU_" + (oldHasStop ? "HASSTOP" : "NOSTOP"))} => {Locale.Get("K45_UU_" + (newHasStop ? "HASSTOP" : "NOSTOP"))}</color>");
                                 }
                                 if (!isSameSegElvType)
                                 {
-                                    observations.Add($"<color yellow>{Locale.Get("K45_TTT_DIFFERENTELEVATIONTYPE")}: {Locale.Get("K45_TTT_ELEVATIONTYPE", m_oldType.ToString())} =>  {Locale.Get("K45_TTT_ELEVATIONTYPE", m_effectiveTargetType.ToString())}</color>");
+                                    observations.Add($"<color yellow>{Locale.Get("K45_UU_DIFFERENTELEVATIONTYPE")}: {Locale.Get("K45_UU_ELEVATIONTYPE", m_oldType.ToString())} =>  {Locale.Get("K45_UU_ELEVATIONTYPE", m_effectiveTargetType.ToString())}</color>");
                                 }
                                 if (!isSameSubService)
                                 {
-                                    observations.Add($"<color yellow>{Locale.Get("K45_TTT_DIFFERENTSUBSERVICE")}: { oldInfo.m_class.m_subService} =>  {targetUpgradeInfo.m_class.m_subService}</color>");
+                                    observations.Add($"<color yellow>{Locale.Get("K45_UU_DIFFERENTSUBSERVICE")}: { oldInfo.m_class.m_subService} =>  {targetUpgradeInfo.m_class.m_subService}</color>");
                                 }
 
                                 m_cachedInfoCompareText = string.Join("\n", observations.ToArray());
@@ -277,7 +277,7 @@ namespace Klyte.UpgradeUntouchable
             {
                 base.ShowToolInfo(false, null, Vector3.zero);
             }
-            TTTPanel.Instance.CurrentDisplayingNet = m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType)?.GetUncheckedLocalizedTitle() ?? Locale.Get("K45_TTT_NONESELECTED");
+            UUPanel.Instance.CurrentDisplayingNet = m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType)?.GetUncheckedLocalizedTitle() ?? Locale.Get("K45_UU_NONESELECTED");
         }
 
         private IEnumerator<bool> CreateNode(bool switchDirection, ushort buildingStart, ushort buildingEnd)
