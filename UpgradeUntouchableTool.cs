@@ -36,14 +36,13 @@ namespace Klyte.UpgradeUntouchable
             {
                 m_upgradeAI = new NetAIWrapper(targetInfo.m_netAI);
                 UUPanel.Instance.UpdateAvailabilities(m_upgradeAI);
+                m_oldAI = null;
+                UUPanel.Instance.CurrentDisplayingNet = m_upgradeAI?.RelativeTo(ElevationType.Default)?.GetUncheckedLocalizedTitle() ?? Locale.Get("K45_UU_NONESELECTED");
             }
 
         }
 
-        public void SetUpgradeMode(ElevationType elevationType)
-        {
-            m_targetType = elevationType;
-        }
+        public void SetUpgradeMode(ElevationType elevationType) => m_targetType = elevationType;
 
 
         protected override void OnLeftClick()
@@ -76,12 +75,34 @@ namespace Klyte.UpgradeUntouchable
                     else if (!(m_upgradeAI is null) && (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0 && !(m_oldAI == m_upgradeAI && m_oldType == m_effectiveTargetType))
                     {
                         ref NetSegment targetSegment = ref Singleton<NetManager>.instance.m_segments.m_buffer[m_hoverSegment];
-                        ref NetNode startNode = ref Singleton<NetManager>.instance.m_nodes.m_buffer[targetSegment.m_startNode];
-                        ref NetNode endNode = ref Singleton<NetManager>.instance.m_nodes.m_buffer[targetSegment.m_endNode];
-
-
-
-                        Singleton<SimulationManager>.instance.AddAction(CreateNode(false, startNode.m_building, endNode.m_building));
+                        var buildingStartNode = Singleton<NetManager>.instance.m_nodes.m_buffer[targetSegment.m_startNode].m_building;
+                        var buildingEndNode = Singleton<NetManager>.instance.m_nodes.m_buffer[targetSegment.m_endNode].m_building;
+                        var oldInfo = targetSegment.Info;
+                        var targetUpgradeInfo = m_upgradeAI.RelativeTo(m_effectiveTargetType, true);
+                        var oldHasStop = oldInfo.m_lanes.Where(x => x.m_stopType != 0).Count() > 0;
+                        var newHasStop = targetUpgradeInfo.m_lanes.Where(x => x.m_stopType != 0).Count() > 0;
+                        if (oldHasStop && !newHasStop)
+                        {
+                            K45DialogControl.ShowModal(new K45DialogControl.BindProperties
+                            {
+                                showButton1 = true,
+                                showButton2 = true,
+                                textButton1 = Locale.Get("YES"),
+                                textButton2 = Locale.Get("NO"),
+                                message = Locale.Get("K45_UU_WOULDNTPLACESTOPSALERT_MESSAGE")
+                            }, (x) =>
+                             {
+                                 if (x == 1)
+                                 {
+                                     Singleton<SimulationManager>.instance.AddAction(CreateNode(false, buildingStartNode, buildingEndNode));
+                                 }
+                                 return true;
+                             });
+                        }
+                        else
+                        {
+                            Singleton<SimulationManager>.instance.AddAction(CreateNode(false, buildingStartNode, buildingEndNode));
+                        }
                     }
 
                 }
@@ -121,7 +142,7 @@ namespace Klyte.UpgradeUntouchable
             {
                 Color toolColor = m_toolMode == Mode.Touch
                     ? (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0
-                        ? SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI || (m_oldAI == m_upgradeAI && m_oldType == m_effectiveTargetType)
+                        ? SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI
                             ? m_removeColor
                             : m_hoverColor
                         : m_removeColor
@@ -130,7 +151,7 @@ namespace Klyte.UpgradeUntouchable
                             ? m_removeColor
                             : Color.cyan
                         : (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0
-                            ? (m_upgradeAI is null)
+                            ? (m_upgradeAI is null) || m_effectiveTargetType == ElevationType.None || (m_oldAI == m_upgradeAI && m_oldType == m_effectiveTargetType)
                                 ? m_removeColor
                                 : m_hoverColor
                             : m_removeColor;
@@ -157,6 +178,11 @@ namespace Klyte.UpgradeUntouchable
 
         private void UpdateControlPoints(NetInfo targetInfo)
         {
+            if (targetInfo is null)
+            {
+                m_controlPointCount = 0;
+                return;
+            }
             NetManager instance = Singleton<NetManager>.instance;
 
             NetTool.ControlPoint controlPoint;
@@ -208,7 +234,7 @@ namespace Klyte.UpgradeUntouchable
                             : "K45_UU_PICKNET_PATTERN"
                         : (m_upgradeAI is null)
                             ? "K45_UU_PRESSCTRLTOPICK"
-                            : SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI
+                            : SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI || m_effectiveTargetType == ElevationType.None
                                 ? "K45_UU_NETNOTSUPPORTED"
                                 : (m_oldAI == m_upgradeAI && m_oldType == m_effectiveTargetType)
                                     ? "K45_UU_CANNOTUPGRADE_ITSELF"
@@ -216,7 +242,6 @@ namespace Klyte.UpgradeUntouchable
                         ), Event.current.control
                         ? SegmentBuffer[m_hoverSegment].Info.GetUncheckedLocalizedTitle()
                         : m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType)?.GetUncheckedLocalizedTitle());
-
                     if (((SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0) && !Event.current.control)
                     {
                         var oldInfo = SegmentBuffer[m_hoverSegment].Info;
@@ -227,39 +252,49 @@ namespace Klyte.UpgradeUntouchable
                             if (!(m_upgradeAI is null))
                             {
                                 m_effectiveTargetType = m_targetType == ElevationType.Default ? m_oldType : m_targetType;
-                                var targetUpgradeInfo = m_upgradeAI.RelativeTo(m_effectiveTargetType);
-                                m_effectiveTargetType = m_upgradeAI.ToType(targetUpgradeInfo);
-
-                                var isSameWidth = oldInfo.m_halfWidth == targetUpgradeInfo.m_halfWidth;
-                                var oldHasStop = oldInfo.m_lanes.Where(x => x.m_stopType != 0).Count() > 0;
-                                var newHasStop = targetUpgradeInfo.m_lanes.Where(x => x.m_stopType != 0).Count() > 0;
-                                var isSameHasStop = oldHasStop == newHasStop;
-
-
-                                var isSameSegElvType = m_oldType == m_effectiveTargetType;
-
-                                var isSameSubService = oldInfo.m_class.m_subService == targetUpgradeInfo.m_class.m_subService;
-
-                                var observations = new List<string>();
-                                if (!isSameWidth)
+                                var targetUpgradeInfo = m_upgradeAI.RelativeTo(m_effectiveTargetType, true);
+                                if (targetUpgradeInfo == null)
                                 {
-                                    observations.Add($"<color yellow>{Locale.Get("K45_UU_DIFFERENTHALFWIDTHS")}: {oldInfo.m_halfWidth.ToString("0.0")} => {targetUpgradeInfo.m_halfWidth.ToString("0.0")} </color>");
+                                    m_effectiveTargetType = ElevationType.None;
+                                    m_cachedInfoCompareText = "";
+                                    text = Locale.Get("K45_UU_NETNOTSUPPORTED");
                                 }
-                                if (!isSameHasStop)
+                                else
                                 {
-                                    observations.Add($"<color red>{Locale.Get("K45_UU_DIFFERENTHASSTOP")}: {Locale.Get("K45_UU_" + (oldHasStop ? "HASSTOP" : "NOSTOP"))} => {Locale.Get("K45_UU_" + (newHasStop ? "HASSTOP" : "NOSTOP"))}</color>");
-                                }
-                                if (!isSameSegElvType)
-                                {
-                                    observations.Add($"<color yellow>{Locale.Get("K45_UU_DIFFERENTELEVATIONTYPE")}: {Locale.Get("K45_UU_ELEVATIONTYPE", m_oldType.ToString())} =>  {Locale.Get("K45_UU_ELEVATIONTYPE", m_effectiveTargetType.ToString())}</color>");
-                                }
-                                if (!isSameSubService)
-                                {
-                                    observations.Add($"<color yellow>{Locale.Get("K45_UU_DIFFERENTSUBSERVICE")}: { oldInfo.m_class.m_subService} =>  {targetUpgradeInfo.m_class.m_subService}</color>");
-                                }
+                                    m_effectiveTargetType = m_upgradeAI.ToType(targetUpgradeInfo);
 
-                                m_cachedInfoCompareText = string.Join("\n", observations.ToArray());
+                                    var isSameWidth = oldInfo.m_halfWidth == targetUpgradeInfo.m_halfWidth;
+                                    var oldHasStop = oldInfo.m_lanes.Where(x => x.m_stopType != 0).Count() > 0;
+                                    var newHasStop = targetUpgradeInfo.m_lanes.Where(x => x.m_stopType != 0).Count() > 0;
+                                    var isSameHasStop = oldHasStop == newHasStop;
+
+
+                                    var isSameSegElvType = m_oldType == m_effectiveTargetType;
+
+                                    var isSameSubService = oldInfo.m_class.m_subService == targetUpgradeInfo.m_class.m_subService;
+
+                                    var observations = new List<string>();
+                                    if (!isSameHasStop)
+                                    {
+                                        observations.Add($"<color red>{Locale.Get("K45_UU_DIFFERENTHASSTOP")}: {Locale.Get("K45_UU_" + (oldHasStop ? "HASSTOP" : "NOSTOP"))} => {Locale.Get("K45_UU_" + (newHasStop ? "HASSTOP" : "NOSTOP"))}</color>");
+                                    }
+                                    if (!isSameSegElvType)
+                                    {
+                                        observations.Add($"<color red>{Locale.Get("K45_UU_DIFFERENTELEVATIONTYPE")}: {Locale.Get("K45_UU_ELEVATIONTYPE", m_oldType.ToString())} =>  {Locale.Get("K45_UU_ELEVATIONTYPE", m_effectiveTargetType.ToString())}</color>");
+                                    }
+                                    if (!isSameWidth)
+                                    {
+                                        observations.Add($"<color yellow>{Locale.Get("K45_UU_DIFFERENTHALFWIDTHS")}: {oldInfo.m_halfWidth.ToString("0.0")} => {targetUpgradeInfo.m_halfWidth.ToString("0.0")} </color>");
+                                    }
+                                    if (!isSameSubService)
+                                    {
+                                        observations.Add($"<color yellow>{Locale.Get("K45_UU_DIFFERENTSUBSERVICE")}: { oldInfo.m_class.m_subService} =>  {targetUpgradeInfo.m_class.m_subService}</color>");
+                                    }
+
+                                    m_cachedInfoCompareText = string.Join("\n", observations.ToArray());
+                                }
                             }
+
                         }
                         base.ShowToolInfo(true, (text + "\n" + m_cachedInfoCompareText).Trim(), m_raycastHit);
                     }
@@ -277,7 +312,6 @@ namespace Klyte.UpgradeUntouchable
             {
                 base.ShowToolInfo(false, null, Vector3.zero);
             }
-            UUPanel.Instance.CurrentDisplayingNet = m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType)?.GetUncheckedLocalizedTitle() ?? Locale.Get("K45_UU_NONESELECTED");
         }
 
         private IEnumerator<bool> CreateNode(bool switchDirection, ushort buildingStart, ushort buildingEnd)

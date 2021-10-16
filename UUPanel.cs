@@ -1,3 +1,4 @@
+using ColossalFramework;
 using ColossalFramework.Globalization;
 using ColossalFramework.UI;
 using Klyte.Commons.Extensions;
@@ -12,7 +13,7 @@ namespace Klyte.UpgradeUntouchable
     {
         public override float PanelWidth => 500;
 
-        public override float PanelHeight => 260;
+        public override float PanelHeight => 300;
 
         private InfoManager.InfoMode m_currentMode = InfoManager.InfoMode.None;
         private InfoManager.SubInfoMode m_currentSubMode = InfoManager.SubInfoMode.None;
@@ -20,11 +21,19 @@ namespace Klyte.UpgradeUntouchable
         private UILabel m_currentlyUpgradingLabel;
         private UITabstrip m_modes;
         private UIButton m_getFromNetTool;
+        private UIPanel m_tip;
 
         internal string CurrentDisplayingNet { get => m_currentlyUpgradingLabel.suffix; set => m_currentlyUpgradingLabel.suffix = value; }
 
         protected override void AwakeActions()
         {
+            KlyteMonoUtils.CreateUIElement(out UIButton help, MainPanel.transform, "Help", new Vector4(430, 5, 32, 32));
+            KlyteMonoUtils.InitButton(help, false, "OptionBase");
+            help.scaleFactor = 0.5f;
+            help.normalFgSprite = KlyteResourceLoader.GetDefaultSpriteNameFor(CommonsSpriteNames.K45_QuestionMark);
+            help.eventClicked += (x, y) => Utils.OpenUrlThreaded("https://twitter.com/Klyte45/status/1449252590689128451");
+
+
             KlyteMonoUtils.CreateUIElement(out UIPanel layoutPanel, MainPanel.transform, "LayoutPanel", new Vector4(0, 40, PanelWidth, PanelHeight - 40));
             layoutPanel.padding = new RectOffset(8, 8, 10, 10);
             layoutPanel.autoLayout = true;
@@ -39,8 +48,10 @@ namespace Klyte.UpgradeUntouchable
 
 
 
+
             m_currentlyUpgradingLabel = UIHelperExtension.AddLabel(uiHelper.Self, "\n\t", PanelWidth - 50, out UIPanel containerUpgrading);
             m_currentlyUpgradingLabel.prefix = Locale.Get("K45_UU_CURRENTLYUPGRADINGTO");
+            m_currentlyUpgradingLabel.suffix = Locale.Get("K45_UU_NONESELECTED");
             KlyteMonoUtils.CreateUIElement(out m_getFromNetTool, containerUpgrading.transform, "getFromNetTool", new Vector4(containerUpgrading.width, 18, 36, 36));
             KlyteMonoUtils.InitButton(m_getFromNetTool, false, "OptionBase");
             m_getFromNetTool.normalFgSprite = KlyteResourceLoader.GetDefaultSpriteNameFor(CommonsSpriteNames.K45_Dropper);
@@ -51,6 +62,8 @@ namespace Klyte.UpgradeUntouchable
                 m_modes.selectedIndex = 0;
             };
             m_getFromNetTool.tooltipLocaleID = "K45_UU_PICKFROMCURRENTNETTOOLITEM";
+            m_getFromNetTool.scaleFactor = 0.5f;
+            m_getFromNetTool.disabledColor = Color.gray;
 
             KlyteMonoUtils.CreateUIElement(out m_modes, layoutPanel.transform, "modePanel", new Vector4(0, 0, PanelWidth - 10, 36));
 
@@ -75,7 +88,7 @@ namespace Klyte.UpgradeUntouchable
             m_modes.eventSelectedIndexChanged += (w, x) => ResetTool();
             UpdateAvailabilities(null);
 
-            UIHelperExtension.AddLabel(uiHelper.Self, Locale.Get("K45_UU_TIP_PRESSCTRLTOPICK"), PanelWidth - 50).textScale = 0.8f;
+            UIHelperExtension.AddLabel(uiHelper.Self, Locale.Get("K45_UU_TIP_PRESSCTRLTOPICK"), PanelWidth - 50, out m_tip).textScale = 0.8f;
         }
 
         public void UpdatePickerState(bool state)
@@ -124,6 +137,7 @@ namespace Klyte.UpgradeUntouchable
         {
             m_currentMode = isChecked ? InfoManager.InfoMode.Underground : InfoManager.InfoMode.None;
             m_currentSubMode = isChecked ? InfoManager.SubInfoMode.UndergroundTunnels : InfoManager.SubInfoMode.None;
+            UpgradeUntouchableMod.Controller?.ToggleTool(true, m_currentMode, m_currentSubMode);
         }
         private void OnClassicModeChanged(bool isChecked)
         {
@@ -131,6 +145,8 @@ namespace Klyte.UpgradeUntouchable
             m_currentlyUpgradingLabel.isVisible = !isChecked;
             m_modes.isVisible = !isChecked;
             m_modes.selectedIndex = 0;
+            m_getFromNetTool.isVisible = !isChecked;
+            m_tip.isVisible = !isChecked;
         }
 
     }
