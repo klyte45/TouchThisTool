@@ -1,10 +1,7 @@
-﻿<color #AA44FF>TTTv4.0</color>
-	- NEW LOCATION: now under <sprite K45_K45Button> button - select the tab to enable the tool
-	- Added underground view toggle feature
-	<color #FFFF00>- Re-enabled the "Back to the main menu" button</color>
-<color #FF8888>r2</color>
-	- Removed unnecessary log entries on output log
-<color #FF8888>r3</color>
-	- Fixed tool unselection when changing tab/closing the <sprite K45_K45Button> button without selecting another tool
-<color #FF8888>r4</color>
-	- Fixed bug preventing a second load after unloading a city
+﻿This new mod brings a totally new way of changing segment types of buildings, without needing to deform them "making the segments touchable", as like Touch This! Mod used to do.
+
+So, it allows you to, beyond upgrading roads, also change platform types* of stations (Example: Trains to Metro or vice-versa, or any other transport types between!).
+
+See the thread linked below to see what this mod can do for you! At the end of it there's a UI explanation.
+
+<color yellow>(*) Train stations may not be able to spawn Metro vehicles and vice-versa. So be sure to be using other stations that can do it (natives from transport type) in the lines.</color>

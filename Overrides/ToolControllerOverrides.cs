@@ -1,6 +1,6 @@
-using Klyte.Commons.Extensors;
+using Klyte.Commons.Extensions;
 
-namespace Klyte.TouchThis.Overrides
+namespace Klyte.UpgradeUntouchable.Overrides
 {
     public class ToolControllerOverrides : Redirector, IRedirectable
     {
@@ -13,10 +13,11 @@ namespace Klyte.TouchThis.Overrides
 
         public static void OnToolChanged(ref ToolBase tool)
         {
-            if (TouchThisTool.instance?.enabled == true && tool != TouchThisTool.instance && (TTTPanel.Instance?.MainPanel?.isVisible ?? false))
+            if (UpgradeUntouchableTool.instance?.enabled == true && tool != UpgradeUntouchableTool.instance && (UUPanel.Instance?.MainPanel?.isVisible ?? false))
             {
-                TouchThisToolMod.Instance?.UnselectTab();
+                UUPanel.Instance?.DeselectTool();
             }
+            UUPanel.Instance?.UpdatePickerState(tool is NetTool);
         }
 
     }
