@@ -1,13 +1,15 @@
 ﻿using ColossalFramework.UI;
 using Klyte.Commons.Interfaces;
+using Klyte.Commons.Utils;
 using System.Collections;
+using System.Linq;
+using UnityEngine;
 
-namespace Klyte.TouchThis
+namespace Klyte.UpgradeUntouchable
 {
-    public class TTTController : BaseController<TouchThisToolMod, TTTController>
+    public class UUController : BaseController<UpgradeUntouchableMod, UUController>
     {
         public const string FOLDER_NAME = "TouchThisTool";
-        public UIButton ToolButton { get; private set; }
 
         internal void ToggleTool(bool newState, InfoManager.InfoMode viewMode, InfoManager.SubInfoMode submode)
         {
@@ -25,17 +27,18 @@ namespace Klyte.TouchThis
         private IEnumerator ToggleTool_Internal(bool newState)
         {
             yield return 0;
-            if (TouchThisTool.instance.enabled && !newState)
+            if (UpgradeUntouchableTool.instance.enabled && !newState)
             {
-                TouchThisTool.instance.enabled = newState;
+                UpgradeUntouchableTool.instance.enabled = newState;
                 ToolController tc = FindObjectOfType<ToolController>();
                 tc.CurrentTool = tc.GetComponent<DefaultTool>();
             }
             else
             {
-                TouchThisTool.instance.enabled = newState;
+                UpgradeUntouchableTool.instance.enabled = newState;
             }
         }
+
 
 
     }
