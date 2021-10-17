@@ -4,7 +4,7 @@ using Klyte.Commons.Utils;
 using System.Collections.Generic;
 using System.Reflection;
 
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.1")]
 namespace Klyte.UpgradeUntouchable
 {
     public class UpgradeUntouchableMod : BasicIUserMod<UpgradeUntouchableMod, UUController, UUPanel>
@@ -25,5 +25,7 @@ namespace Klyte.UpgradeUntouchable
         protected override List<ulong> AutomaticUnsubMods => new List<ulong>() {
            1393797695 //TTT
         };
+        protected override bool IsValidLoadMode(ILoading loading) => base.IsValidLoadMode(loading) || loading?.currentMode == AppMode.AssetEditor;
+        protected override bool IsValidLoadMode(LoadMode mode) => base.IsValidLoadMode(mode) || mode == LoadMode.LoadAsset || mode == LoadMode.NewAsset;
     }
 }
