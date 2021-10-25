@@ -17,7 +17,7 @@ namespace Klyte.UpgradeUntouchable.Overrides
             {
                 UUPanel.Instance?.DeselectTool();
             }
-            UUPanel.Instance?.UpdatePickerState(tool is NetTool);
+            UUPanel.Instance?.UpdatePickerState(tool.GetType() == typeof(NetTool));
         }
 
     }

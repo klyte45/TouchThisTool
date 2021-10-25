@@ -4,7 +4,7 @@ using Klyte.Commons.Utils;
 using System.Collections.Generic;
 using System.Reflection;
 
-[assembly: AssemblyVersion("1.0.0.1")]
+[assembly: AssemblyVersion("1.0.0.2")]
 namespace Klyte.UpgradeUntouchable
 {
     public class UpgradeUntouchableMod : BasicIUserMod<UpgradeUntouchableMod, UUController, UUPanel>

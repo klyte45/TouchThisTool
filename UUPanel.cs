@@ -5,6 +5,7 @@ using Klyte.Commons.Extensions;
 using Klyte.Commons.Interfaces;
 using Klyte.Commons.UI.SpriteNames;
 using Klyte.Commons.Utils;
+using System.Linq;
 using UnityEngine;
 
 namespace Klyte.UpgradeUntouchable
@@ -57,7 +58,7 @@ namespace Klyte.UpgradeUntouchable
             m_getFromNetTool.normalFgSprite = KlyteResourceLoader.GetDefaultSpriteNameFor(CommonsSpriteNames.K45_Dropper);
             m_getFromNetTool.eventClicked += (x, y) =>
             {
-                var netTool = FindObjectOfType<NetTool>();
+                var netTool = FindObjectsOfType<NetTool>().Where(z => z.GetType() == typeof(NetTool)).FirstOrDefault();
                 UpgradeUntouchableTool.instance.SetUpgradeTarget(netTool.m_prefab);
                 m_modes.selectedIndex = 0;
             };

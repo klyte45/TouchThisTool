@@ -9,3 +9,6 @@ See the thread linked below to see what this mod can do for you! At the end of i
 <color yellow>Update r1 (19/OCT/21):</color> 
 	- Added support to asset editor
 	- Added support to Network Skins Mod
+
+<color yellow>Update r2 (25/OCT/21):</color> 
+	- Fixed pipette button not working when a road is selected in main NetTool
