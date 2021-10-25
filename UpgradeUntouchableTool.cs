@@ -10,16 +10,16 @@ using static Klyte.Commons.Utils.NetAIWrapper;
 namespace Klyte.UpgradeUntouchable
 {
 
-    public class UpgradeUntouchableTool : BasicNetTool<UpgradeUntouchableTool>
+    public class UpgradeUntouchableTool : BaseNetTool<UpgradeUntouchableTool>
     {
-        private enum Mode
+        private enum UuMode
         {
             Touch,
             Upgrade
         }
 
 
-        private Mode m_toolMode = Mode.Upgrade;
+        private UuMode m_toolMode = UuMode.Upgrade;
         private NetAIWrapper m_upgradeAI;
         private ElevationType m_targetType;
         private ElevationType m_effectiveTargetType;
@@ -37,7 +37,8 @@ namespace Klyte.UpgradeUntouchable
                 m_upgradeAI = new NetAIWrapper(targetInfo.m_netAI);
                 UUPanel.Instance.UpdateAvailabilities(m_upgradeAI);
                 m_oldAI = null;
-                UUPanel.Instance.CurrentDisplayingNet = m_upgradeAI?.RelativeTo(ElevationType.Default)?.GetUncheckedLocalizedTitle() ?? Locale.Get("K45_UU_NONESELECTED");
+                UUPanel.Instance.CurrentDisplayingNet = m_upgradeAI?.RelativeTo(ElevationType.Default)?.GetUncheckedLocalizedTitle() ?? Locale.Get("K45_UU_NONESELECTED");                
+                Prefab = targetInfo;
             }
 
         }
@@ -50,7 +51,7 @@ namespace Klyte.UpgradeUntouchable
             LogUtils.DoLog("OnLeftClick");
             if (m_hoverSegment > 0)
             {
-                if (m_toolMode == Mode.Touch && (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0)
+                if (m_toolMode == UuMode.Touch && CheckUntouchability())
                 {
                     LogUtils.DoLog("Touching!");
                     var id = new InstanceID
@@ -66,13 +67,13 @@ namespace Klyte.UpgradeUntouchable
                     Singleton<EffectManager>.instance.DispatchEffect(effectInfo, id, spawnArea, Vector3.zero, 0f, 1f, Singleton<AudioManager>.instance.DefaultGroup, 0u, true);
                     LogUtils.DoLog("Touched!");
                 }
-                else if (m_toolMode == Mode.Upgrade)
+                else if (m_toolMode == UuMode.Upgrade)
                 {
                     if (Event.current.control)
                     {
                         SetUpgradeTarget(SegmentBuffer[m_hoverSegment].Info);
                     }
-                    else if (!(m_upgradeAI is null) && (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0 && !(m_oldAI == m_upgradeAI && m_oldType == m_effectiveTargetType))
+                    else if (!(m_upgradeAI is null) && CheckUntouchability())
                     {
                         ref NetSegment targetSegment = ref Singleton<NetManager>.instance.m_segments.m_buffer[m_hoverSegment];
                         var buildingStartNode = Singleton<NetManager>.instance.m_nodes.m_buffer[targetSegment.m_startNode].m_building;
@@ -81,7 +82,7 @@ namespace Klyte.UpgradeUntouchable
                         var targetUpgradeInfo = m_upgradeAI.RelativeTo(m_effectiveTargetType, true);
                         var oldHasStop = oldInfo.m_lanes.Where(x => x.m_stopType != 0).Count() > 0;
                         var newHasStop = targetUpgradeInfo.m_lanes.Where(x => x.m_stopType != 0).Count() > 0;
-                        if (oldHasStop && !newHasStop)
+                        if (oldHasStop && !newHasStop && !IsAssetEditor())
                         {
                             K45DialogControl.ShowModal(new K45DialogControl.BindProperties
                             {
@@ -91,13 +92,13 @@ namespace Klyte.UpgradeUntouchable
                                 textButton2 = Locale.Get("NO"),
                                 message = Locale.Get("K45_UU_WOULDNTPLACESTOPSALERT_MESSAGE")
                             }, (x) =>
-                             {
-                                 if (x == 1)
-                                 {
-                                     Singleton<SimulationManager>.instance.AddAction(CreateNode(false, buildingStartNode, buildingEndNode));
-                                 }
-                                 return true;
-                             });
+                            {
+                                if (x == 1)
+                                {
+                                    Singleton<SimulationManager>.instance.AddAction(CreateNode(false, buildingStartNode, buildingEndNode));
+                                }
+                                return true;
+                            });
                         }
                         else
                         {
@@ -108,14 +109,18 @@ namespace Klyte.UpgradeUntouchable
                 }
             }
         }
+
+        private bool CheckUntouchability() => (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0 || IsAssetEditor();
+        private static bool IsAssetEditor() => (SimulationManager.instance.m_metaData.m_updateMode is SimulationManager.UpdateMode um && (um == SimulationManager.UpdateMode.NewAsset || um == SimulationManager.UpdateMode.LoadAsset));
+
         protected override void OnRightClick()
         {
             LogUtils.DoLog("OnRightClick");
             if (m_hoverSegment > 0)
             {
-                if (m_toolMode == Mode.Upgrade)
+                if (m_toolMode == UuMode.Upgrade)
                 {
-                    if ((SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0)
+                    if (CheckUntouchability())
                     {
                         ref NetSegment targetSegment = ref Singleton<NetManager>.instance.m_segments.m_buffer[m_hoverSegment];
 
@@ -134,14 +139,14 @@ namespace Klyte.UpgradeUntouchable
             }
         }
 
-        internal void SetClassicMode(bool isChecked) => m_toolMode = isChecked ? Mode.Touch : Mode.Upgrade;
+        internal void SetClassicMode(bool isChecked) => m_toolMode = isChecked ? UuMode.Touch : UuMode.Upgrade;
 
         public override void RenderOverlay(RenderManager.CameraInfo cameraInfo)
         {
             if (m_hoverSegment != 0)
             {
-                Color toolColor = m_toolMode == Mode.Touch
-                    ? (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0
+                Color toolColor = m_toolMode == UuMode.Touch
+                    ? CheckUntouchability()
                         ? SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI
                             ? m_removeColor
                             : m_hoverColor
@@ -150,8 +155,8 @@ namespace Klyte.UpgradeUntouchable
                         ? SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI
                             ? m_removeColor
                             : Color.cyan
-                        : (SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0
-                            ? (m_upgradeAI is null) || m_effectiveTargetType == ElevationType.None || (m_oldAI == m_upgradeAI && m_oldType == m_effectiveTargetType)
+                        : CheckUntouchability()
+                            ? (m_upgradeAI is null) || m_effectiveTargetType == ElevationType.None
                                 ? m_removeColor
                                 : m_hoverColor
                             : m_removeColor;
@@ -167,9 +172,9 @@ namespace Klyte.UpgradeUntouchable
 
         public override void SimulationStep()
         {
-            if (m_toolMode == Mode.Upgrade && m_hoverSegment != 0)
+            if (m_toolMode == UuMode.Upgrade && m_hoverSegment != 0)
             {
-                if (!(m_upgradeAI is null) && ((SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0) && !Event.current.control && !(m_oldAI is null))
+                if (!(m_upgradeAI is null) && (CheckUntouchability()) && !Event.current.control && !(m_oldAI is null))
                 {
                     UpdateControlPoints(m_upgradeAI.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType));
                 }
@@ -224,9 +229,9 @@ namespace Klyte.UpgradeUntouchable
         {
             base.OnToolUpdate();
 
-            if (m_toolMode == Mode.Upgrade && m_hoverSegment != 0)
+            if (m_toolMode == UuMode.Upgrade && m_hoverSegment != 0)
             {
-                if (((SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0) || Event.current.control || (m_upgradeAI is null))
+                if ((CheckUntouchability()) || Event.current.control || (m_upgradeAI is null))
                 {
                     var text = string.Format(Locale.Get(Event.current.control
                         ? SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI
@@ -236,13 +241,11 @@ namespace Klyte.UpgradeUntouchable
                             ? "K45_UU_PRESSCTRLTOPICK"
                             : SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI || m_effectiveTargetType == ElevationType.None
                                 ? "K45_UU_NETNOTSUPPORTED"
-                                : (m_oldAI == m_upgradeAI && m_oldType == m_effectiveTargetType)
-                                    ? "K45_UU_CANNOTUPGRADE_ITSELF"
-                                    : "K45_UU_UPGRADETO_PATTERN"
+                                : "K45_UU_UPGRADETO_PATTERN"
                         ), Event.current.control
                         ? SegmentBuffer[m_hoverSegment].Info.GetUncheckedLocalizedTitle()
                         : m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType)?.GetUncheckedLocalizedTitle());
-                    if (((SegmentBuffer[m_hoverSegment].m_flags & NetSegment.Flags.Untouchable) != 0) && !Event.current.control)
+                    if ((CheckUntouchability()) && !Event.current.control)
                     {
                         var oldInfo = SegmentBuffer[m_hoverSegment].Info;
                         if (oldInfo.m_netAI != m_oldAI?.AI)
@@ -332,7 +335,7 @@ namespace Klyte.UpgradeUntouchable
             NetInfo prefab = switchDirection ? m_oldAI.RelativeTo(m_oldType) : m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType);
             if (prefab != null)
             {
-                if (m_toolMode == Mode.Upgrade && m_controlPointCount < 2)
+                if (m_toolMode == UuMode.Upgrade && m_controlPointCount < 2)
                 {
                     prefab.m_netAI.UpgradeFailed();
                 }
