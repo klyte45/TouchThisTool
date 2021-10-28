@@ -12,3 +12,6 @@ See the thread linked below to see what this mod can do for you! At the end of i
 
 <color yellow>Update r2 (25/OCT/21):</color> 
 	- Fixed pipette button not working when a road is selected in main NetTool
+
+<color yellow>Update r3 (28/OCT/21):</color> 
+	- Fixed some issues with upgrading tunnel segments (like in Sunken Plaza Station)

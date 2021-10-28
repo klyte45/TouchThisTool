@@ -231,7 +231,7 @@ namespace Klyte.UpgradeUntouchable
 
             if (m_toolMode == UuMode.Upgrade && m_hoverSegment != 0)
             {
-                if ((CheckUntouchability()) || Event.current.control || (m_upgradeAI is null))
+                if (CheckUntouchability() || Event.current.control || (m_upgradeAI is null))
                 {
                     var text = string.Format(Locale.Get(Event.current.control
                         ? SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI
@@ -245,7 +245,7 @@ namespace Klyte.UpgradeUntouchable
                         ), Event.current.control
                         ? SegmentBuffer[m_hoverSegment].Info.GetUncheckedLocalizedTitle()
                         : m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType)?.GetUncheckedLocalizedTitle());
-                    if ((CheckUntouchability()) && !Event.current.control)
+                    if (CheckUntouchability() && !Event.current.control)
                     {
                         var oldInfo = SegmentBuffer[m_hoverSegment].Info;
                         if (oldInfo.m_netAI != m_oldAI?.AI)
@@ -264,8 +264,6 @@ namespace Klyte.UpgradeUntouchable
                                 }
                                 else
                                 {
-                                    m_effectiveTargetType = m_upgradeAI.ToType(targetUpgradeInfo);
-
                                     var isSameWidth = oldInfo.m_halfWidth == targetUpgradeInfo.m_halfWidth;
                                     var oldHasStop = oldInfo.m_lanes.Where(x => x.m_stopType != 0).Count() > 0;
                                     var newHasStop = targetUpgradeInfo.m_lanes.Where(x => x.m_stopType != 0).Count() > 0;
