@@ -7,10 +7,10 @@ using System.Reflection;
 using UnityEngine;
 using UpgradeUntouchable.Localization;
 
-[assembly: AssemblyVersion("1.1.0.*")]
+[assembly: AssemblyVersion("1.1.0.0")]
 namespace UpgradeUntouchable
 {
-    public class UpgradeUntouchableMod : BasicIUserMod<UpgradeUntouchableMod, UUController>
+    public class ModInstance : BasicIUserMod<ModInstance, UUController>
     {
         public override string GitHubRepoPath { get; } = "klyte45/TouchThisTool";
         public override string SimpleName => "Upgrade Untouchable";

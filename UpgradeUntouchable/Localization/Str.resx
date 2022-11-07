@@ -136,7 +136,7 @@
   </data>
   <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">
     <value>Use classic Touch This! mode
-&lt;color yellow&gt;(WARNING: This may cause issues in the buildings!)&lt;/color&gt;</value>
+&lt;color=yellow&gt;(WARNING: This may cause issues in the buildings!)&lt;/color&gt;</value>
   </data>
   <data name="UU_NETNOTSUPPORTED" xml:space="preserve">
     <value>Net not supported!</value>
@@ -218,5 +218,9 @@ Check if you are not trying to use a non-station track in the place of the a sta
 If you know what you're doing, just go ahead.
 
 Continue the upgrade operation?</value>
+  </data>
+  <data name="uu_enableNetPickerWindow" xml:space="preserve">
+    <value>Enable net picker window
+Allow to assign the net being built to be used here.</value>
   </data>
 </root>

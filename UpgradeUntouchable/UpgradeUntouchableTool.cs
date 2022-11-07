@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UpgradeUntouchable.Localization;
+using UpgradeUntouchable.UI;
 using UpgradeUntouchable.Utils;
 using static UpgradeUntouchable.Utils.NetAIWrapper;
 
@@ -15,14 +16,12 @@ namespace UpgradeUntouchable
 
     public class UpgradeUntouchableTool : KwyttoSegmentToolBase
     {
-        private enum UuMode
+        public enum UuMode
         {
             Touch,
             Upgrade
         }
 
-
-        private UuMode m_toolMode = UuMode.Upgrade;
         private NetAIWrapper m_upgradeAI;
         private ElevationType m_targetType;
         private ElevationType m_effectiveTargetType;
@@ -34,16 +33,20 @@ namespace UpgradeUntouchable
         private NetTool.ControlPoint[] m_controlPoints = new NetTool.ControlPoint[3];
         private int m_controlPointCount;
 
-        public void SetUpgradeTarget(NetInfo targetInfo)
+        public UuMode ToolMode { get; private set; } = UuMode.Upgrade;
+        internal string CurrentSelection => m_upgradeAI?.RelativeTo(ElevationType.Default)?.GetUncheckedLocalizedTitle() ?? Str.UU_NONESELECTED;
+
+        public bool SetUpgradeTarget(NetInfo targetInfo)
         {
             if (!(targetInfo.m_netAI is DamAI) && !(targetInfo.m_netAI is WaterPipeAI))
             {
                 m_upgradeAI = new NetAIWrapper(targetInfo.m_netAI);
-                // UUPanel.Instance.UpdateAvailabilities(m_upgradeAI);
+                UUWindow.Instance.UpdateAvailabilities(m_upgradeAI);
                 m_oldAI = null;
-                //UUPanel.Instance.CurrentDisplayingNet = m_upgradeAI?.RelativeTo(ElevationType.Default)?.GetUncheckedLocalizedTitle() ?? Str.UU_NONESELECTED;
                 m_prefab = targetInfo;
+                return true;
             }
+            return false;
         }
 
         public void SetUpgradeMode(ElevationType elevationType) => m_targetType = elevationType;
@@ -54,7 +57,7 @@ namespace UpgradeUntouchable
             LogUtils.DoLog("OnLeftClick");
             if (m_hoverSegment > 0)
             {
-                if (m_toolMode == UuMode.Touch && CheckUntouchability())
+                if (ToolMode == UuMode.Touch && CheckUntouchability())
                 {
                     LogUtils.DoLog("Touching!");
                     var id = new InstanceID
@@ -70,7 +73,7 @@ namespace UpgradeUntouchable
                     Singleton<EffectManager>.instance.DispatchEffect(effectInfo, id, spawnArea, Vector3.zero, 0f, 1f, Singleton<AudioManager>.instance.DefaultGroup, 0u, true);
                     LogUtils.DoLog("Touched!");
                 }
-                else if (m_toolMode == UuMode.Upgrade)
+                else if (ToolMode == UuMode.Upgrade)
                 {
                     if (Event.current.control)
                     {
@@ -127,7 +130,7 @@ namespace UpgradeUntouchable
             LogUtils.DoLog("OnRightClick");
             if (m_hoverSegment > 0)
             {
-                if (m_toolMode == UuMode.Upgrade)
+                if (ToolMode == UuMode.Upgrade)
                 {
                     if (CheckUntouchability())
                     {
@@ -148,13 +151,13 @@ namespace UpgradeUntouchable
             }
         }
 
-        internal void SetClassicMode(bool isChecked) => m_toolMode = isChecked ? UuMode.Touch : UuMode.Upgrade;
+        internal void SetClassicMode(bool isChecked) => ToolMode = isChecked ? UuMode.Touch : UuMode.Upgrade;
 
         public override void RenderOverlay(RenderManager.CameraInfo cameraInfo)
         {
             if (m_hoverSegment != 0)
             {
-                Color toolColor = m_toolMode == UuMode.Touch
+                Color toolColor = ToolMode == UuMode.Touch
                     ? CheckUntouchability()
                         ? SegmentBuffer[m_hoverSegment].Info.m_netAI is DamAI
                             ? m_removeColor
@@ -180,7 +183,7 @@ namespace UpgradeUntouchable
 
         public override void SimulationStep()
         {
-            if (m_toolMode == UuMode.Upgrade && m_hoverSegment != 0)
+            if (ToolMode == UuMode.Upgrade && m_hoverSegment != 0)
             {
                 if (!(m_upgradeAI is null) && CheckUntouchability() && !Event.current.control && !(m_oldAI is null))
                 {
@@ -237,7 +240,7 @@ namespace UpgradeUntouchable
         {
             base.OnToolUpdate();
 
-            if (m_toolMode == UuMode.Upgrade && m_hoverSegment != 0)
+            if (ToolMode == UuMode.Upgrade && m_hoverSegment != 0)
             {
                 if ((CheckUntouchability()) || Event.current.control || (m_upgradeAI is null))
                 {
@@ -343,7 +346,7 @@ namespace UpgradeUntouchable
             NetInfo prefab = switchDirection ? m_oldAI.RelativeTo(m_oldType) : m_upgradeAI?.RelativeTo(m_targetType == ElevationType.Default ? m_oldType : m_targetType);
             if (prefab != null)
             {
-                if (m_toolMode == UuMode.Upgrade && m_controlPointCount < 2)
+                if (ToolMode == UuMode.Upgrade && m_controlPointCount < 2)
                 {
                     prefab.m_netAI.UpgradeFailed();
                 }

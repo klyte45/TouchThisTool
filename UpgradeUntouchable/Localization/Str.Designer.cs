@@ -80,7 +80,7 @@ namespace UpgradeUntouchable.Localization {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Use classic Touch This! mode
-        ///&lt;color yellow&gt;(WARNING: This may cause issues in the buildings!)&lt;/color&gt;.
+        ///&lt;color=yellow&gt;(WARNING: This may cause issues in the buildings!)&lt;/color&gt;.
         /// </summary>
         internal static string UU_CLASSICTOUCHTHISMODE {
             get {
@@ -202,6 +202,16 @@ namespace UpgradeUntouchable.Localization {
         internal static string UU_ELEVATIONTYPE__Tunnel {
             get {
                 return ResourceManager.GetString("UU_ELEVATIONTYPE__Tunnel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Enable net picker window
+        ///Allow to assign the net being built to be used here..
+        /// </summary>
+        internal static string uu_enableNetPickerWindow {
+            get {
+                return ResourceManager.GetString("uu_enableNetPickerWindow", resourceCulture);
             }
         }
         

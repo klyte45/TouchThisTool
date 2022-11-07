@@ -126,7 +126,7 @@
   <data name="UU_PRESSCTRLTOPICK" xml:space="preserve">    <value>Ctrlキーを押しながら、アップグレード用のセグメントを選択</value>  </data>
   <data name="UU_NONESELECTED" xml:space="preserve">    <value>&lt;NONE SELECTED!&gt;</value>  </data>
   <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">    <value>クラシックなTouch This!モードを使用
-&lt;color yellow&gt;(警告:建物で問題が起こる可能性有り)&lt;/color&gt;</value>  </data>
+&lt;color=yellow&gt;(警告:建物で問題が起こる可能性有り)&lt;/color&gt;</value>  </data>
   <data name="UU_NETNOTSUPPORTED" xml:space="preserve">    <value>このネットワークは未サポート</value>  </data>
   <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">    <value>同タイプにはアップグレード出来ません</value>  </data>
   <data name="UU_DIFFERENTHALFWIDTHS" xml:space="preserve">    <value>異なる幅</value>  </data>

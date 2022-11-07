@@ -63,7 +63,6 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="EnumI18nExtensions.cs" />
     <Compile Include="Localization\Str.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,11 +75,7 @@
       <LastGenOutput>Str.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\VersionNotes.txt" />
-    <Compile Include="UpgradeUntouchableMod.cs" />
-    <Compile Include="UpgradeUntouchableTool.cs" />
-    <Compile Include="Utils\NetAIWrapper.cs" />
-    <Compile Include="UUController.cs" />
-    <Compile Include="UUPanel.cs" />
+    <Compile Include="**/*.cs" Exclude="Localization\Str.Designer.cs"/>
     <EmbeddedResource Include="UI\**\*.png" />
   </ItemGroup>
   <ItemGroup>

@@ -6,9 +6,6 @@ See the thread linked below to see what this mod can do for you! At the end of i
 
 <color=yellow>(*) Train stations may not be able to spawn Metro vehicles and vice-versa. So be sure to be using other stations that can do it (natives from transport type) in the lines.</color>
 
-<color=yellow>Update r1 (19/OCT/21):</color> 
-	- Added support to asset editor
-	- Added support to Network Skins Mod
-
-<color=yellow>Update r2 (25/OCT/21):</color> 
-	- Fixed pipette button not working when a road is selected in main NetTool
+<color=yellow>v1.1 (14/NOV/22):</color> 
+	- Rebuilt the mod in new mod Framework
+	- New i18n system supported by Crowd.in

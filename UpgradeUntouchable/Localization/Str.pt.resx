@@ -126,7 +126,7 @@
   <data name="UU_PRESSCTRLTOPICK" xml:space="preserve">    <value>Segure a tecla Control para usar essa via para trocar os segmentos intocáveis</value>  </data>
   <data name="UU_NONESELECTED" xml:space="preserve">    <value>&lt;SELEÇÃO VAZIA&gt;</value>  </data>
   <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">    <value>Usar modo clássico do Touch This!
-&lt;color yellow&gt;(CUIDADO: Isso pode causar problemas nos prédios!)&lt;/color&gt;</value>  </data>
+&lt;color=yellow&gt;(CUIDADO: Isso pode causar problemas nos prédios!)&lt;/color&gt;</value>  </data>
   <data name="UU_NETNOTSUPPORTED" xml:space="preserve">    <value>Via não suportada!</value>  </data>
   <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">    <value>Não é possível fazer upgrade para si próprio!</value>  </data>
   <data name="UU_DIFFERENTHALFWIDTHS" xml:space="preserve">    <value>Largura de vias diferentes</value>  </data>
