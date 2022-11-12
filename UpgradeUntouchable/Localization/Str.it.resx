@@ -163,64 +163,64 @@
     <value>Non supporta fermata</value>
   </data>
   <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">
-    <value>Undefined</value>
+    <value>Non definito</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Default" xml:space="preserve">
-    <value>Default</value>
+    <value>Predefinito</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Tunnel" xml:space="preserve">
     <value>Tunnel</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Ground" xml:space="preserve">
-    <value>Ground</value>
+    <value>Terreno</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Elevated" xml:space="preserve">
-    <value>Elevated</value>
+    <value>Elevato</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Bridge" xml:space="preserve">
-    <value>Bridge</value>
+    <value>Ponte</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Slope" xml:space="preserve">
-    <value>Slope</value>
+    <value>Pendenza</value>
   </data>
   <data name="UU_CURRENTLYUPGRADINGTO" xml:space="preserve">
-    <value>Currently upgrading to:</value>
+    <value>Attualmente aggiornando a:</value>
   </data>
   <data name="UU_USETHISNETWORKAUUT" xml:space="preserve">
-    <value>Use current net to upgrade untouchable</value>
+    <value>Usa rete attuale per aggiornare inalterabile</value>
   </data>
   <data name="UU_BRIDGEMODE" xml:space="preserve">
-    <value>Force bridge</value>
+    <value>Forza ponte</value>
   </data>
   <data name="UU_ELEVATEDMODE" xml:space="preserve">
-    <value>Force elevated</value>
+    <value>Forza elevato</value>
   </data>
   <data name="UU_GROUNDMODE" xml:space="preserve">
-    <value>Force ground</value>
+    <value>Forza terreno</value>
   </data>
   <data name="UU_NORMALMODE" xml:space="preserve">
-    <value>Try use the current segment elevation type</value>
+    <value>Prova a usare il tipo d'elevazione del segmento attuale</value>
   </data>
   <data name="UU_TUNNELMODE" xml:space="preserve">
-    <value>Force tunnel</value>
+    <value>Forza tunnel</value>
   </data>
   <data name="UU_PICKFROMCURRENTNETTOOLITEM" xml:space="preserve">
-    <value>Pick network from current selected</value>
+    <value>Prendi la rete dalla selezione corrente</value>
   </data>
   <data name="UU_TIP_PRESSCTRLTOPICK" xml:space="preserve">
-    <value>TIP: Hold Control key to pick the hovered segment type in this mod!
-TIP: Use right click to invert an one-way/asymmetric segment direction</value>
+    <value>TIP: Premi tasto Controllo per scegliere il tipo di segmento coperto in questa mod!
+TIP: Usa tasto destro per invertire direzione del segmento senso unico/asimmetrico</value>
   </data>
   <data name="UU_WOULDNTPLACESTOPSALERT_MESSAGE" xml:space="preserve">
-    <value>The network you are about to upgrade in this place &lt;color yellow&gt;has no support to placing public transport stops&lt;/color&gt;, while the old one can.
-Check if you are not trying to use a non-station track in the place of the a station track. To pick a station track, you can both try to find it in Find It search or pick it from an existing building in the city while this mod tool is active and holding control while clicking in the desired track.
+    <value>La rete che stai per aggiornare &lt;color yellow&gt;non ha alcun supporto per collocare fermate di trasporto pubblico&lt;/color&gt;, a differenza della vecchia.
+Verifica di non stare utilizzando un binario senza stazioni al posto di un binario con stazione. Per scegliere un binario con stazione, puoi cercarlo con Find It o selezionarlo da un edificio esistente in città: mentre questo strumento è attivo, premi Controllo cliccando sulla traccia desiderata.
 
-If you know what you're doing, just go ahead.
+Se sai cosa stai facendo, prosegui.
 
-Continue the upgrade operation?</value>
+Continuare l'operazione di aggiornamento?</value>
   </data>
   <data name="uu_enableNetPickerWindow" xml:space="preserve">
-    <value>Enable net picker window
-Allow to assign the net being built to be used here.</value>
+    <value>Abilita la finestra del selettore di rete
+Permette di assegnare la rete che si sta creando all'utilizzo.</value>
   </data>
 </root>
