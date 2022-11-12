@@ -132,7 +132,7 @@
     <value>Ctrlキーを押しながら、アップグレード用のセグメントを選択</value>
   </data>
   <data name="UU_NONESELECTED" xml:space="preserve">
-    <value>&lt;NONE SELECTED!&gt;</value>
+    <value>&lt;何も選択していません！&gt;</value>
   </data>
   <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">
     <value>クラシックなTouch This!モードを使用
@@ -218,7 +218,7 @@ Station Trackで無く、通常の線路などを選択していないか確認�
 問題が無ければ、そのまま進めてください。</value>
   </data>
   <data name="uu_enableNetPickerWindow" xml:space="preserve">
-    <value>Enable net picker window
-Allow to assign the net being built to be used here.</value>
+    <value>ネットをスポイトするウィンドウを有効化
+ここで使用したいネットワークの指定が出来ます。</value>
   </data>
 </root>
