@@ -219,7 +219,7 @@ Se você sabe o que está fazendo, vá em frente.
 Continuar a operação de modernização?</value>
   </data>
   <data name="uu_enableNetPickerWindow" xml:space="preserve">
-    <value>Enable net picker window
-Allow to assign the net being built to be used here.</value>
+    <value>Ativar janela do seletor de via
+Permitir atribuir a via sendo construída para ser usada aqui.</value>
   </data>
 </root>
