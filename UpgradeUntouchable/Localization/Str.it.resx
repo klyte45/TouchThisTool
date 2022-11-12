@@ -118,49 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UU_SHOWUNDERGROUNDVIEW" xml:space="preserve">
-    <value>Tunnel mode</value>
+    <value>Modalità Tunnel</value>
   </data>
   <data name="UU_UPGRADETO_PATTERN" xml:space="preserve">
-    <value>Upgrade this segment to:
+    <value>Aggiorna questo segmento a:
 &lt;color white&gt;{0}&lt;/color&gt;</value>
   </data>
   <data name="UU_PICKNET_PATTERN" xml:space="preserve">
-    <value>Get this network to upgrade untouchable networks:
+    <value>Prendi questa rete per aggiornare le reti inalterabili:
 &lt;color white&gt;{0}&lt;/color&gt;</value>
   </data>
   <data name="UU_PRESSCTRLTOPICK" xml:space="preserve">
-    <value>Hold Control key to pick a road to use to upgrade untouchable segments</value>
+    <value>Premi il tasto Controllo per scegliere una strada da usare per aggiornare segmenti inalterabili</value>
   </data>
   <data name="UU_NONESELECTED" xml:space="preserve">
-    <value>&lt;NONE SELECTED!&gt;</value>
+    <value>&lt;NULLA SELEZIONATO!&gt;</value>
   </data>
   <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">
-    <value>Use classic Touch This! mode
-&lt;color=yellow&gt;(WARNING: This may cause issues in the buildings!)&lt;/color&gt;</value>
+    <value>Usa modalità classica Touch This!
+&lt;color=yellow&gt;(ATTENZIONE: Potrebbe causare problemi negli edifici!)&lt;/color&gt;</value>
   </data>
   <data name="UU_NETNOTSUPPORTED" xml:space="preserve">
-    <value>Net not supported!</value>
+    <value>Rete non supportata!</value>
   </data>
   <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">
-    <value>Can't upgrade to its own type!</value>
+    <value>Impossibile aggiornare allo stesso tipo!</value>
   </data>
   <data name="UU_DIFFERENTHALFWIDTHS" xml:space="preserve">
-    <value>Different widths</value>
+    <value>Larghezze diverse</value>
   </data>
   <data name="UU_DIFFERENTHASSTOP" xml:space="preserve">
-    <value>Different stops placement support</value>
+    <value>Supporto al posizionamento fermate diverso</value>
   </data>
   <data name="UU_DIFFERENTELEVATIONTYPE" xml:space="preserve">
-    <value>Different kind of elevated network</value>
+    <value>Tipo di rete elevata diverso</value>
   </data>
   <data name="UU_DIFFERENTSUBSERVICE" xml:space="preserve">
-    <value>Different subservice</value>
+    <value>Sottoservizi diversi</value>
   </data>
   <data name="UU_HASSTOP" xml:space="preserve">
-    <value>Supports stop</value>
+    <value>Supporta fermata</value>
   </data>
   <data name="UU_NOSTOP" xml:space="preserve">
-    <value>No stop support</value>
+    <value>Non supporta fermata</value>
   </data>
   <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">
     <value>Undefined</value>
