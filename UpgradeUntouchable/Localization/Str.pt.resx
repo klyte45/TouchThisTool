@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!--
-    Microsoft ResX Schema
-
+  <!-- 
+    Microsoft ResX Schema 
+    
     Version 2.0
-
-    The primary goals of this format is to allow a simple XML format
-    that is mostly human readable. The generation and parsing of the
-    various data types are done through the TypeConverter classes
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
     associated with the data types.
-
+    
     Example:
-
+    
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,79 +26,79 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-
-    There are any number of "resheader" rows that contain simple
+                
+    There are any number of "resheader" rows that contain simple 
     name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a
-    type or mimetype. Type corresponds to a .NET class that support
-    text/value conversion through the TypeConverter architecture.
-    Classes that don't support this are serialized and stored with the
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
     mimetype set.
-
-    The mimetype is used for serialized objects, and tells the
-    ResXResourceReader how to depersist the object. This is currently not
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
     extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format
-    that the ResXResourceWriter will generate, however the reader can
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
     read any of the formats listed below.
-
+    
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-
+    
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array
+    value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,43 +117,109 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="﻿#TITLE__[COMPLIMENT]>[INDEX]" xml:space="preserve">    <value>VALUE</value>  </data>
-  <data name="UU_SHOWUNDERGROUNDVIEW" xml:space="preserve">    <value>Modo de túneis</value>  </data>
-  <data name="UU_UPGRADETO_PATTERN" xml:space="preserve">    <value>Trocar esse segmento para:
-&lt;color white&gt;{0}&lt;/color&gt;</value>  </data>
-  <data name="UU_PICKNET_PATTERN" xml:space="preserve">    <value>Usar esse tipo de segmento para atualizar outros:
-&lt;color white&gt;{0}&lt;/color&gt;</value>  </data>
-  <data name="UU_PRESSCTRLTOPICK" xml:space="preserve">    <value>Segure a tecla Control para usar essa via para trocar os segmentos intocáveis</value>  </data>
-  <data name="UU_NONESELECTED" xml:space="preserve">    <value>&lt;SELEÇÃO VAZIA&gt;</value>  </data>
-  <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">    <value>Usar modo clássico do Touch This!
-&lt;color=yellow&gt;(CUIDADO: Isso pode causar problemas nos prédios!)&lt;/color&gt;</value>  </data>
-  <data name="UU_NETNOTSUPPORTED" xml:space="preserve">    <value>Via não suportada!</value>  </data>
-  <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">    <value>Não é possível fazer upgrade para si próprio!</value>  </data>
-  <data name="UU_DIFFERENTHALFWIDTHS" xml:space="preserve">    <value>Largura de vias diferentes</value>  </data>
-  <data name="UU_DIFFERENTHASSTOP" xml:space="preserve">    <value>Suporte à paradas de transporte público diferentes</value>  </data>
-  <data name="UU_DIFFERENTELEVATIONTYPE" xml:space="preserve">    <value>Tipo de elevação de via diferentes</value>  </data>
-  <data name="UU_DIFFERENTSUBSERVICE" xml:space="preserve">    <value>Subserviço diferentes</value>  </data>
-  <data name="UU_HASSTOP" xml:space="preserve">    <value>Suporta paradas</value>  </data>
-  <data name="UU_NOSTOP" xml:space="preserve">    <value>Não suporta paradas</value>  </data>
-  <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">    <value>Indefinido</value>  </data>
-  <data name="UU_ELEVATIONTYPE__Default" xml:space="preserve">    <value>Padrão</value>  </data>
-  <data name="UU_ELEVATIONTYPE__Tunnel" xml:space="preserve">    <value>Túnel</value>  </data>
-  <data name="UU_ELEVATIONTYPE__Ground" xml:space="preserve">    <value>Térreo</value>  </data>
-  <data name="UU_ELEVATIONTYPE__Elevated" xml:space="preserve">    <value>Elevado</value>  </data>
-  <data name="UU_ELEVATIONTYPE__Bridge" xml:space="preserve">    <value>Ponte</value>  </data>
-  <data name="UU_ELEVATIONTYPE__Slope" xml:space="preserve">    <value>Rampa</value>  </data>
-  <data name="UU_CURRENTLYUPGRADINGTO" xml:space="preserve">    <value>Atualmente atualizando para:</value>  </data>
-  <data name="UU_USETHISNETWORKAUUT" xml:space="preserve">    <value>Usar o tipo de via atual para atualizar segmentos intocáveis</value>  </data>
-  <data name="UU_BRIDGEMODE" xml:space="preserve">    <value>Forçar ponte</value>  </data>
-  <data name="UU_ELEVATEDMODE" xml:space="preserve">    <value>Forçar elevado</value>  </data>
-  <data name="UU_GROUNDMODE" xml:space="preserve">    <value>Forçar térreo</value>  </data>
-  <data name="UU_NORMALMODE" xml:space="preserve">    <value>Tentar utilizar o mesmo tipo de elevação do original</value>  </data>
-  <data name="UU_TUNNELMODE" xml:space="preserve">    <value>Forçar túnel</value>  </data>
-  <data name="UU_PICKFROMCURRENTNETTOOLITEM" xml:space="preserve">    <value>Usar tipo de rede atualmente selecionado</value>  </data>
-  <data name="UU_TIP_PRESSCTRLTOPICK" xml:space="preserve">    <value>DICA: Segure Ctrl para usar a via sob o mouse neste mod!
-DICA: Use o clique direito para inverter a direção de vias assimétricas ou de mão unica.</value>  </data>
-  <data name="UU_WOULDNTPLACESTOPSALERT_MESSAGE" xml:space="preserve">    <value>O tipo de via que você está tentando substituir tem suporte a paradas de transporte público, porém &lt;color yellow&gt;a nova via que está tentando colocar em seu lugar não tem suporte à paradas!&lt;/color&gt;
+  <data name="UU_SHOWUNDERGROUNDVIEW" xml:space="preserve">
+    <value>Modo de túneis</value>
+  </data>
+  <data name="UU_UPGRADETO_PATTERN" xml:space="preserve">
+    <value>Trocar esse segmento para:
+&lt;color white&gt;{0}&lt;/color&gt;</value>
+  </data>
+  <data name="UU_PICKNET_PATTERN" xml:space="preserve">
+    <value>Usar esse tipo de segmento para atualizar outros:
+&lt;color white&gt;{0}&lt;/color&gt;</value>
+  </data>
+  <data name="UU_PRESSCTRLTOPICK" xml:space="preserve">
+    <value>Segure a tecla Control para usar essa via para trocar os segmentos intocáveis</value>
+  </data>
+  <data name="UU_NONESELECTED" xml:space="preserve">
+    <value>&lt;SELEÇÃO VAZIA&gt;</value>
+  </data>
+  <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">
+    <value>Usar modo clássico do Touch This!
+&lt;color=yellow&gt;(CUIDADO: Isso pode causar problemas nos prédios!)&lt;/color&gt;</value>
+  </data>
+  <data name="UU_NETNOTSUPPORTED" xml:space="preserve">
+    <value>Via não suportada!</value>
+  </data>
+  <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">
+    <value>Não é possível fazer upgrade para si próprio!</value>
+  </data>
+  <data name="UU_DIFFERENTHALFWIDTHS" xml:space="preserve">
+    <value>Largura de vias diferentes</value>
+  </data>
+  <data name="UU_DIFFERENTHASSTOP" xml:space="preserve">
+    <value>Suporte à paradas de transporte público diferentes</value>
+  </data>
+  <data name="UU_DIFFERENTELEVATIONTYPE" xml:space="preserve">
+    <value>Tipo de elevação de via diferentes</value>
+  </data>
+  <data name="UU_DIFFERENTSUBSERVICE" xml:space="preserve">
+    <value>Subserviço diferentes</value>
+  </data>
+  <data name="UU_HASSTOP" xml:space="preserve">
+    <value>Suporta paradas</value>
+  </data>
+  <data name="UU_NOSTOP" xml:space="preserve">
+    <value>Não suporta paradas</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">
+    <value>Indefinido</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Default" xml:space="preserve">
+    <value>Padrão</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Tunnel" xml:space="preserve">
+    <value>Túnel</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Ground" xml:space="preserve">
+    <value>Térreo</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Elevated" xml:space="preserve">
+    <value>Elevado</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Bridge" xml:space="preserve">
+    <value>Ponte</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Slope" xml:space="preserve">
+    <value>Rampa</value>
+  </data>
+  <data name="UU_CURRENTLYUPGRADINGTO" xml:space="preserve">
+    <value>Atualmente atualizando para:</value>
+  </data>
+  <data name="UU_USETHISNETWORKAUUT" xml:space="preserve">
+    <value>Usar o tipo de via atual para atualizar segmentos intocáveis</value>
+  </data>
+  <data name="UU_BRIDGEMODE" xml:space="preserve">
+    <value>Forçar ponte</value>
+  </data>
+  <data name="UU_ELEVATEDMODE" xml:space="preserve">
+    <value>Forçar elevado</value>
+  </data>
+  <data name="UU_GROUNDMODE" xml:space="preserve">
+    <value>Forçar térreo</value>
+  </data>
+  <data name="UU_NORMALMODE" xml:space="preserve">
+    <value>Tentar utilizar o mesmo tipo de elevação do original</value>
+  </data>
+  <data name="UU_TUNNELMODE" xml:space="preserve">
+    <value>Forçar túnel</value>
+  </data>
+  <data name="UU_PICKFROMCURRENTNETTOOLITEM" xml:space="preserve">
+    <value>Usar tipo de rede atualmente selecionado</value>
+  </data>
+  <data name="UU_TIP_PRESSCTRLTOPICK" xml:space="preserve">
+    <value>DICA: Segure Ctrl para usar a via sob o mouse neste mod!
+DICA: Use o clique direito para inverter a direção de vias assimétricas ou de mão unica.</value>
+  </data>
+  <data name="UU_WOULDNTPLACESTOPSALERT_MESSAGE" xml:space="preserve">
+    <value>O tipo de via que você está tentando substituir tem suporte a paradas de transporte público, porém &lt;color yellow&gt;a nova via que está tentando colocar em seu lugar não tem suporte à paradas!&lt;/color&gt;
 Confira se não está utilizando uma via comum no lugar de uma via de estação. Você pode usá-las neste mod achando elas via Find It ou segurando a tecla control enquanto a ferramenta deste mod está ativada e clicando no segmento de estação de um prédio já construído na cidade.
 Se você sabe o que está fazendo, vá em frente.
 
-Continuar a operação de modernização?</value>  </data></root>
+Continuar a operação de modernização?</value>
+  </data>
+  <data name="uu_enableNetPickerWindow" xml:space="preserve">
+    <value>Enable net picker window
+Allow to assign the net being built to be used here.</value>
+  </data>
+</root>

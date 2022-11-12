@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!--
-    Microsoft ResX Schema
-
+  <!-- 
+    Microsoft ResX Schema 
+    
     Version 2.0
-
-    The primary goals of this format is to allow a simple XML format
-    that is mostly human readable. The generation and parsing of the
-    various data types are done through the TypeConverter classes
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
     associated with the data types.
-
+    
     Example:
-
+    
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,79 +26,79 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-
-    There are any number of "resheader" rows that contain simple
+                
+    There are any number of "resheader" rows that contain simple 
     name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a
-    type or mimetype. Type corresponds to a .NET class that support
-    text/value conversion through the TypeConverter architecture.
-    Classes that don't support this are serialized and stored with the
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
     mimetype set.
-
-    The mimetype is used for serialized objects, and tells the
-    ResXResourceReader how to depersist the object. This is currently not
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
     extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format
-    that the ResXResourceWriter will generate, however the reader can
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
     read any of the formats listed below.
-
+    
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-
+    
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array
+    value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,4 +117,110 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="﻿#TITLE__[COMPLIMENT]>[INDEX]" xml:space="preserve">    <value>VALUE</value>  </data></root>
+  <data name="UU_SHOWUNDERGROUNDVIEW" xml:space="preserve">
+    <value>Tunnel mode</value>
+  </data>
+  <data name="UU_UPGRADETO_PATTERN" xml:space="preserve">
+    <value>Upgrade this segment to:
+&lt;color white&gt;{0}&lt;/color&gt;</value>
+  </data>
+  <data name="UU_PICKNET_PATTERN" xml:space="preserve">
+    <value>Get this network to upgrade untouchable networks:
+&lt;color white&gt;{0}&lt;/color&gt;</value>
+  </data>
+  <data name="UU_PRESSCTRLTOPICK" xml:space="preserve">
+    <value>Hold Control key to pick a road to use to upgrade untouchable segments</value>
+  </data>
+  <data name="UU_NONESELECTED" xml:space="preserve">
+    <value>&lt;NONE SELECTED!&gt;</value>
+  </data>
+  <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">
+    <value>Use classic Touch This! mode
+&lt;color=yellow&gt;(WARNING: This may cause issues in the buildings!)&lt;/color&gt;</value>
+  </data>
+  <data name="UU_NETNOTSUPPORTED" xml:space="preserve">
+    <value>Net not supported!</value>
+  </data>
+  <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">
+    <value>Can't upgrade to its own type!</value>
+  </data>
+  <data name="UU_DIFFERENTHALFWIDTHS" xml:space="preserve">
+    <value>Different widths</value>
+  </data>
+  <data name="UU_DIFFERENTHASSTOP" xml:space="preserve">
+    <value>Different stops placement support</value>
+  </data>
+  <data name="UU_DIFFERENTELEVATIONTYPE" xml:space="preserve">
+    <value>Different kind of elevated network</value>
+  </data>
+  <data name="UU_DIFFERENTSUBSERVICE" xml:space="preserve">
+    <value>Different subservice</value>
+  </data>
+  <data name="UU_HASSTOP" xml:space="preserve">
+    <value>Supports stop</value>
+  </data>
+  <data name="UU_NOSTOP" xml:space="preserve">
+    <value>No stop support</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">
+    <value>Undefined</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Tunnel" xml:space="preserve">
+    <value>Tunnel</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Ground" xml:space="preserve">
+    <value>Ground</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Elevated" xml:space="preserve">
+    <value>Elevated</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Bridge" xml:space="preserve">
+    <value>Bridge</value>
+  </data>
+  <data name="UU_ELEVATIONTYPE__Slope" xml:space="preserve">
+    <value>Slope</value>
+  </data>
+  <data name="UU_CURRENTLYUPGRADINGTO" xml:space="preserve">
+    <value>Currently upgrading to:</value>
+  </data>
+  <data name="UU_USETHISNETWORKAUUT" xml:space="preserve">
+    <value>Use current net to upgrade untouchable</value>
+  </data>
+  <data name="UU_BRIDGEMODE" xml:space="preserve">
+    <value>Force bridge</value>
+  </data>
+  <data name="UU_ELEVATEDMODE" xml:space="preserve">
+    <value>Force elevated</value>
+  </data>
+  <data name="UU_GROUNDMODE" xml:space="preserve">
+    <value>Force ground</value>
+  </data>
+  <data name="UU_NORMALMODE" xml:space="preserve">
+    <value>Try use the current segment elevation type</value>
+  </data>
+  <data name="UU_TUNNELMODE" xml:space="preserve">
+    <value>Force tunnel</value>
+  </data>
+  <data name="UU_PICKFROMCURRENTNETTOOLITEM" xml:space="preserve">
+    <value>Pick network from current selected</value>
+  </data>
+  <data name="UU_TIP_PRESSCTRLTOPICK" xml:space="preserve">
+    <value>TIP: Hold Control key to pick the hovered segment type in this mod!
+TIP: Use right click to invert an one-way/asymmetric segment direction</value>
+  </data>
+  <data name="UU_WOULDNTPLACESTOPSALERT_MESSAGE" xml:space="preserve">
+    <value>The network you are about to upgrade in this place &lt;color yellow&gt;has no support to placing public transport stops&lt;/color&gt;, while the old one can.
+Check if you are not trying to use a non-station track in the place of the a station track. To pick a station track, you can both try to find it in Find It search or pick it from an existing building in the city while this mod tool is active and holding control while clicking in the desired track.
+
+If you know what you're doing, just go ahead.
+
+Continue the upgrade operation?</value>
+  </data>
+  <data name="uu_enableNetPickerWindow" xml:space="preserve">
+    <value>Enable net picker window
+Allow to assign the net being built to be used here.</value>
+  </data>
+</root>
