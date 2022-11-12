@@ -142,13 +142,13 @@
     <value>Net not supported!</value>
   </data>
   <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">
-    <value>Can't upgrade to its own type!</value>
+    <value>Impossible de mettre à niveau vers son propre type !</value>
   </data>
   <data name="UU_DIFFERENTHALFWIDTHS" xml:space="preserve">
-    <value>Different widths</value>
+    <value>Différentes largeurs</value>
   </data>
   <data name="UU_DIFFERENTHASSTOP" xml:space="preserve">
-    <value>Different stops placement support</value>
+    <value>Prise en charge du placement des arrêts différents</value>
   </data>
   <data name="UU_DIFFERENTELEVATIONTYPE" xml:space="preserve">
     <value>Different kind of elevated network</value>
@@ -163,25 +163,25 @@
     <value>No stop support</value>
   </data>
   <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">
-    <value>Undefined</value>
+    <value>Non défini</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Default" xml:space="preserve">
-    <value>Default</value>
+    <value>Par défaut</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Tunnel" xml:space="preserve">
     <value>Tunnel</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Ground" xml:space="preserve">
-    <value>Ground</value>
+    <value>Au sol</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Elevated" xml:space="preserve">
-    <value>Elevated</value>
+    <value>Élevé</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Bridge" xml:space="preserve">
-    <value>Bridge</value>
+    <value>Pont</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Slope" xml:space="preserve">
-    <value>Slope</value>
+    <value>Pente</value>
   </data>
   <data name="UU_CURRENTLYUPGRADINGTO" xml:space="preserve">
     <value>Currently upgrading to:</value>
