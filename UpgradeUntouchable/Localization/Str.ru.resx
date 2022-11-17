@@ -121,7 +121,7 @@
     <value>Tunnel mode</value>
   </data>
   <data name="UU_UPGRADETO_PATTERN" xml:space="preserve">
-    <value>Upgrade this segment to:
+    <value>Обновить этот сегмент до:
 &lt;color white&gt;{0}&lt;/color&gt;</value>
   </data>
   <data name="UU_PICKNET_PATTERN" xml:space="preserve">
