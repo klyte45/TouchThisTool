@@ -9,3 +9,6 @@ See the thread linked below to see what this mod can do for you! At the end of i
 <color=yellow>v1.1 (14/NOV/22):</color> 
 	- Rebuilt the mod in new mod Framework
 	- New i18n system supported by Crowd.in
+
+<color=green>Update r2 (18/NOV/22)</color>
+- Fixed UI scale in non-1080p based resolutions
