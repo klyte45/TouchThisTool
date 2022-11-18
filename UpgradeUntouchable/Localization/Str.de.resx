@@ -220,7 +220,7 @@ Wenn du weist, was du tust, mache einfach weiter.
 Upgrade-Operation fortführen?</value>
   </data>
   <data name="uu_enableNetPickerWindow" xml:space="preserve">
-    <value>Enable net picker window
-Allow to assign the net being built to be used here.</value>
+    <value>Aktiviere Netzwerkauswahlfenster
+Erlaubt das Zuweisen des zu bauenden Netzwerkes.</value>
   </data>
 </root>
