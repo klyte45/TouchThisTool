@@ -121,103 +121,103 @@
     <value>Tunnelmodus</value>
   </data>
   <data name="UU_UPGRADETO_PATTERN" xml:space="preserve">
-    <value>Upgrade this segment to:
+    <value>Dieses Segment aktualisieren:
 &lt;color white&gt;{0}&lt;/color&gt;</value>
   </data>
   <data name="UU_PICKNET_PATTERN" xml:space="preserve">
-    <value>Get this network to upgrade untouchable networks:
+    <value>Hol dir dieses Netzwerk, um unantastbare Netzwerke zu aktualisieren:
 &lt;color white&gt;{0}&lt;/color&gt;</value>
   </data>
   <data name="UU_PRESSCTRLTOPICK" xml:space="preserve">
-    <value>Hold Control key to pick a road to use to upgrade untouchable segments</value>
+    <value>Halte STRG gedrückt, um eine Straße zu wählen, deren unantastbare Segmente du verbessern möchtest</value>
   </data>
   <data name="UU_NONESELECTED" xml:space="preserve">
-    <value>&lt;NONE SELECTED!&gt;</value>
+    <value>&lt;NICHTS AUSGEWÄHLT!&gt;</value>
   </data>
   <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">
-    <value>Use classic Touch This! mode
-&lt;color=yellow&gt;(WARNING: This may cause issues in the buildings!)&lt;/color&gt;</value>
+    <value>Verwende den klassischen Touch This! Modus
+&lt;color=yellow&gt;(WARNUNG: Das kann Probleme in den Gebäuden verursachen!)&lt;/color&gt;</value>
   </data>
   <data name="UU_NETNOTSUPPORTED" xml:space="preserve">
-    <value>Net not supported!</value>
+    <value>Netzwerk nicht unterstützt!</value>
   </data>
   <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">
-    <value>Can't upgrade to its own type!</value>
+    <value>Kann nicht auf seinen eigenen Typ aktualisieren!</value>
   </data>
   <data name="UU_DIFFERENTHALFWIDTHS" xml:space="preserve">
-    <value>Different widths</value>
+    <value>Unterschiedliche Breiten</value>
   </data>
   <data name="UU_DIFFERENTHASSTOP" xml:space="preserve">
-    <value>Different stops placement support</value>
+    <value>Unterstützung für verschiedene Haltestellen-Platzierungen</value>
   </data>
   <data name="UU_DIFFERENTELEVATIONTYPE" xml:space="preserve">
-    <value>Different kind of elevated network</value>
+    <value>Unterschiedliche Art von erhöhtem Netzwerk</value>
   </data>
   <data name="UU_DIFFERENTSUBSERVICE" xml:space="preserve">
-    <value>Different subservice</value>
+    <value>Anderer Unterdienst</value>
   </data>
   <data name="UU_HASSTOP" xml:space="preserve">
-    <value>Supports stop</value>
+    <value>Unterstützt Haltestellen</value>
   </data>
   <data name="UU_NOSTOP" xml:space="preserve">
-    <value>No stop support</value>
+    <value>Keine Haltestellen-Unterstützung</value>
   </data>
   <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">
-    <value>Undefined</value>
+    <value>Undefiniert</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Default" xml:space="preserve">
-    <value>Default</value>
+    <value>Standard</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Tunnel" xml:space="preserve">
     <value>Tunnel</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Ground" xml:space="preserve">
-    <value>Ground</value>
+    <value>Ebenerdig</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Elevated" xml:space="preserve">
-    <value>Elevated</value>
+    <value>Erhöht</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Bridge" xml:space="preserve">
-    <value>Bridge</value>
+    <value>Brücke</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Slope" xml:space="preserve">
-    <value>Slope</value>
+    <value>Schräge</value>
   </data>
   <data name="UU_CURRENTLYUPGRADINGTO" xml:space="preserve">
-    <value>Currently upgrading to:</value>
+    <value>Aktuell aktualisieren auf:</value>
   </data>
   <data name="UU_USETHISNETWORKAUUT" xml:space="preserve">
-    <value>Use current net to upgrade untouchable</value>
+    <value>Aktuelles Netzwerk verwenden, um das Unantastbare zu aktualisieren</value>
   </data>
   <data name="UU_BRIDGEMODE" xml:space="preserve">
-    <value>Force bridge</value>
+    <value>Brücke erzwingen</value>
   </data>
   <data name="UU_ELEVATEDMODE" xml:space="preserve">
-    <value>Force elevated</value>
+    <value>Erhöht erzwingen</value>
   </data>
   <data name="UU_GROUNDMODE" xml:space="preserve">
-    <value>Force ground</value>
+    <value>Ebenerdig erzwingen</value>
   </data>
   <data name="UU_NORMALMODE" xml:space="preserve">
-    <value>Try use the current segment elevation type</value>
+    <value>Versuche die aktuelle Segmenthöhe zu nutzen</value>
   </data>
   <data name="UU_TUNNELMODE" xml:space="preserve">
-    <value>Force tunnel</value>
+    <value>Tunnel erzwingen</value>
   </data>
   <data name="UU_PICKFROMCURRENTNETTOOLITEM" xml:space="preserve">
-    <value>Pick network from current selected</value>
+    <value>Aktuell ausgewähltes Netzwerk verwenden</value>
   </data>
   <data name="UU_TIP_PRESSCTRLTOPICK" xml:space="preserve">
-    <value>TIP: Hold Control key to pick the hovered segment type in this mod!
-TIP: Use right click to invert an one-way/asymmetric segment direction</value>
+    <value>TIPP: Halte STRG gedrückt, um das hervorgehobene Segment auszuwählen!
+TIPP: Verwende Rechtsklick, um die Richtung einer Einbahn-/asymmetrische Straße umzukehren</value>
   </data>
   <data name="UU_WOULDNTPLACESTOPSALERT_MESSAGE" xml:space="preserve">
-    <value>The network you are about to upgrade in this place &lt;color yellow&gt;has no support to placing public transport stops&lt;/color&gt;, while the old one can.
-Check if you are not trying to use a non-station track in the place of the a station track. To pick a station track, you can both try to find it in Find It search or pick it from an existing building in the city while this mod tool is active and holding control while clicking in the desired track.
+    <value>Das Netzwerk, das du an diesem Ort aktualisieren möchtest, &lt;color yellow&gt;hat keine Unterstützung für die Haltestelle des öffentlichen Nahverkehrs&lt;/color&gt;, während die alte Straße dies besitzt.
+Überprüfe, ob du nicht versuchst, ein normales Gleis anstelle eines Stationsgleises in der Station zu verwenden. Um eine Bahngleis auszuwählen, suche es in Find it oder wähle es aus einem bestehenden Gebäude in der Stadt aus, während dieses Mod-Werkzeug aktiv ist indem du STRG gedrückt hälst, während du die gewünschte Spur anklickst.
 
-If you know what you're doing, just go ahead.
+Wenn du weist, was du tust, mache einfach weiter.
 
-Continue the upgrade operation?</value>
+Upgrade-Operation fortführen?</value>
   </data>
   <data name="uu_enableNetPickerWindow" xml:space="preserve">
     <value>Enable net picker window
