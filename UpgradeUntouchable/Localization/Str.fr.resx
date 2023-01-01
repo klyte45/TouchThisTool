@@ -118,28 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UU_SHOWUNDERGROUNDVIEW" xml:space="preserve">
-    <value>Tunnel mode</value>
+    <value>Mode Tunnel</value>
   </data>
   <data name="UU_UPGRADETO_PATTERN" xml:space="preserve">
-    <value>Upgrade this segment to:
+    <value>Mettre à jour ce segment vers:
 &lt;color white&gt;{0}&lt;/color&gt;</value>
   </data>
   <data name="UU_PICKNET_PATTERN" xml:space="preserve">
-    <value>Get this network to upgrade untouchable networks:
+    <value>Utiliser ce réseau pour mettre à niveau les réseaux intouchables :
 &lt;color white&gt;{0}&lt;/color&gt;</value>
   </data>
   <data name="UU_PRESSCTRLTOPICK" xml:space="preserve">
-    <value>Hold Control key to pick a road to use to upgrade untouchable segments</value>
+    <value>Maintenez la touche Control enfoncée pour choisir une route à utiliser pour améliorer les segments intouchables</value>
   </data>
   <data name="UU_NONESELECTED" xml:space="preserve">
     <value>&lt;NONE SELECTED!&gt;</value>
   </data>
   <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">
-    <value>Use classic Touch This! mode
-&lt;color=yellow&gt;(WARNING: This may cause issues in the buildings!)&lt;/color&gt;</value>
+    <value>Utilisez le mode classique Touch This! Mode
+&lt;color=yellow&gt;(ATTENTION : Cela peut causer des problèmes dans les bâtiments !)&lt;/color&gt;</value>
   </data>
   <data name="UU_NETNOTSUPPORTED" xml:space="preserve">
-    <value>Net not supported!</value>
+    <value>Non pris en charge !</value>
   </data>
   <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">
     <value>Impossible de mettre à niveau vers son propre type !</value>
@@ -151,16 +151,16 @@
     <value>Prise en charge du placement des arrêts différents</value>
   </data>
   <data name="UU_DIFFERENTELEVATIONTYPE" xml:space="preserve">
-    <value>Different kind of elevated network</value>
+    <value>Différents types de réseaux élevés</value>
   </data>
   <data name="UU_DIFFERENTSUBSERVICE" xml:space="preserve">
-    <value>Different subservice</value>
+    <value>Sous-service différent</value>
   </data>
   <data name="UU_HASSTOP" xml:space="preserve">
-    <value>Supports stop</value>
+    <value>Arrêt du support</value>
   </data>
   <data name="UU_NOSTOP" xml:space="preserve">
-    <value>No stop support</value>
+    <value>Aucun arrêt du support</value>
   </data>
   <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">
     <value>Non défini</value>
@@ -184,43 +184,43 @@
     <value>Pente</value>
   </data>
   <data name="UU_CURRENTLYUPGRADINGTO" xml:space="preserve">
-    <value>Currently upgrading to:</value>
+    <value>Mise à jour en cours vers :</value>
   </data>
   <data name="UU_USETHISNETWORKAUUT" xml:space="preserve">
-    <value>Use current net to upgrade untouchable</value>
+    <value>Utiliser le réseau actuel pour mettre à niveau intouchable</value>
   </data>
   <data name="UU_BRIDGEMODE" xml:space="preserve">
-    <value>Force bridge</value>
+    <value>Forcer pont</value>
   </data>
   <data name="UU_ELEVATEDMODE" xml:space="preserve">
-    <value>Force elevated</value>
+    <value>Forcer l'élévation</value>
   </data>
   <data name="UU_GROUNDMODE" xml:space="preserve">
-    <value>Force ground</value>
+    <value>Forcer la mise au sol</value>
   </data>
   <data name="UU_NORMALMODE" xml:space="preserve">
-    <value>Try use the current segment elevation type</value>
+    <value>Essayez d'utiliser le type d'altitude de segment actuel</value>
   </data>
   <data name="UU_TUNNELMODE" xml:space="preserve">
-    <value>Force tunnel</value>
+    <value>Forcer les tunnels</value>
   </data>
   <data name="UU_PICKFROMCURRENTNETTOOLITEM" xml:space="preserve">
-    <value>Pick network from current selected</value>
+    <value>Choisir le réseau depuis la sélection actuelle</value>
   </data>
   <data name="UU_TIP_PRESSCTRLTOPICK" xml:space="preserve">
-    <value>TIP: Hold Control key to pick the hovered segment type in this mod!
-TIP: Use right click to invert an one-way/asymmetric segment direction</value>
+    <value>Astuce : Maintenez la touche contrôle enfoncée pour choisir le type de segment survolé dans ce mod !
+Astuce : Utilisez le clic droit pour inverser une direction de segment à sens unique / asymétrique</value>
   </data>
   <data name="UU_WOULDNTPLACESTOPSALERT_MESSAGE" xml:space="preserve">
-    <value>The network you are about to upgrade in this place &lt;color yellow&gt;has no support to placing public transport stops&lt;/color&gt;, while the old one can.
-Check if you are not trying to use a non-station track in the place of the a station track. To pick a station track, you can both try to find it in Find It search or pick it from an existing building in the city while this mod tool is active and holding control while clicking in the desired track.
+    <value>Le réseau que vous êtes sur le point de mettre à niveau dans cet endroit &lt;color yellow&gt;n'a aucune prise en charge pour placer les arrêts de transports publics&lt;/color&gt;, tant que l'ancien le peut.
+Vérifiez si vous n'essayez pas d'utiliser une piste non station à la place d'une piste station. Pour choisir une piste de station, vous pouvez soit essayer de le trouver avec Find It ou le choisir dans un bâtiment existant dans la ville pendant que cet outil de mod est actif et maintient le contrôle en cliquant sur la piste souhaitée.
 
-If you know what you're doing, just go ahead.
+Si vous savez ce que vous faites, allez-y.
 
-Continue the upgrade operation?</value>
+Continuer l'opération de mise à niveau ?</value>
   </data>
   <data name="uu_enableNetPickerWindow" xml:space="preserve">
-    <value>Enable net picker window
-Allow to assign the net being built to be used here.</value>
+    <value>Activer la fenêtre du sélecteur du réseau
+Permet d'assigner le réseau en cours de construction pour être utilisé ici.</value>
   </data>
 </root>
