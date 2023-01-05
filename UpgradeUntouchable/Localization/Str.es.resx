@@ -121,46 +121,46 @@
     <value>Modo túnel</value>
   </data>
   <data name="UU_UPGRADETO_PATTERN" xml:space="preserve">
-    <value>Upgrade this segment to:
+    <value>Mejorar este segmento a:
 &lt;color white&gt;{0}&lt;/color&gt;</value>
   </data>
   <data name="UU_PICKNET_PATTERN" xml:space="preserve">
-    <value>Get this network to upgrade untouchable networks:
+    <value>Hacer que esta red se mejore a redes "Intocables":
 &lt;color white&gt;{0}&lt;/color&gt;</value>
   </data>
   <data name="UU_PRESSCTRLTOPICK" xml:space="preserve">
-    <value>Hold Control key to pick a road to use to upgrade untouchable segments</value>
+    <value>Mantén presionada la tecla Control para elegir una red a usar para mejorar segmentos a "Intocable"</value>
   </data>
   <data name="UU_NONESELECTED" xml:space="preserve">
-    <value>&lt;NONE SELECTED!&gt;</value>
+    <value>&lt;NINGUNO SELECCIONADO!&gt;</value>
   </data>
   <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">
-    <value>Use classic Touch This! mode
-&lt;color=yellow&gt;(WARNING: This may cause issues in the buildings!)&lt;/color&gt;</value>
+    <value>Usa el modo clásico de "Touch This!"
+&lt;color=yellow&gt;(ADVERTENCIA: ¡Esto puede causar problemas en los edificios!)&lt;/color&gt;</value>
   </data>
   <data name="UU_NETNOTSUPPORTED" xml:space="preserve">
-    <value>Net not supported!</value>
+    <value>¡Red no compatible!</value>
   </data>
   <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">
-    <value>Can't upgrade to its own type!</value>
+    <value>¡No se puede mejorar a su propio tipo!</value>
   </data>
   <data name="UU_DIFFERENTHALFWIDTHS" xml:space="preserve">
-    <value>Different widths</value>
+    <value>Diferentes anchos</value>
   </data>
   <data name="UU_DIFFERENTHASSTOP" xml:space="preserve">
-    <value>Different stops placement support</value>
+    <value>Compatibilidad para colocar diferentes tipos de parada</value>
   </data>
   <data name="UU_DIFFERENTELEVATIONTYPE" xml:space="preserve">
-    <value>Different kind of elevated network</value>
+    <value>Diferente tipo de red elevada</value>
   </data>
   <data name="UU_DIFFERENTSUBSERVICE" xml:space="preserve">
-    <value>Different subservice</value>
+    <value>Sub-servicio diferente</value>
   </data>
   <data name="UU_HASSTOP" xml:space="preserve">
-    <value>Supports stop</value>
+    <value>Ser compatible con paradas</value>
   </data>
   <data name="UU_NOSTOP" xml:space="preserve">
-    <value>No stop support</value>
+    <value>No ser compatible con paradas</value>
   </data>
   <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">
     <value>Indefinido</value>
@@ -187,7 +187,7 @@
     <value>Actualizando a:</value>
   </data>
   <data name="UU_USETHISNETWORKAUUT" xml:space="preserve">
-    <value>Use current net to upgrade untouchable</value>
+    <value>Usar red actual para mejorar a "Intocable"</value>
   </data>
   <data name="UU_BRIDGEMODE" xml:space="preserve">
     <value>Forzar puente</value>
@@ -199,7 +199,7 @@
     <value>Forzar En suelo</value>
   </data>
   <data name="UU_NORMALMODE" xml:space="preserve">
-    <value>Try use the current segment elevation type</value>
+    <value>Intenta usar el tipo de elevación del segmento actual</value>
   </data>
   <data name="UU_TUNNELMODE" xml:space="preserve">
     <value>Forzar túnel</value>
@@ -208,19 +208,19 @@
     <value>Elegir red de la selección actual</value>
   </data>
   <data name="UU_TIP_PRESSCTRLTOPICK" xml:space="preserve">
-    <value>TIP: Hold Control key to pick the hovered segment type in this mod!
-TIP: Use right click to invert an one-way/asymmetric segment direction</value>
+    <value>TIP: ¡Mantenga presionada la tecla Control para elegir el tipo de segmento enfocado en este mod!
+TIP: Use el clic derecho para invertir la dirección de un segmento unidireccional/asimétrico</value>
   </data>
   <data name="UU_WOULDNTPLACESTOPSALERT_MESSAGE" xml:space="preserve">
-    <value>The network you are about to upgrade in this place &lt;color yellow&gt;has no support to placing public transport stops&lt;/color&gt;, while the old one can.
-Check if you are not trying to use a non-station track in the place of the a station track. To pick a station track, you can both try to find it in Find It search or pick it from an existing building in the city while this mod tool is active and holding control while clicking in the desired track.
+    <value>La red que estás a punto de mejorar en este lugar &lt;color yellow&gt;no es compatible para colocar paradas de transporte público&lt;/color&gt;, mientras que el anterior puede.
+Comprueba si no estas intentando utilizar una vía que no es para la estacion en el lugar de una via para estacion. Para elegir una via de estación, puedes intentar encontrarlo en "Find It" o seleccionandolo de un edificio existente en la ciudad mientras este mod este activo y manteniendo presionado la tecla Control mientras haces clic en la via deseada.
 
-If you know what you're doing, just go ahead.
+Si sabe lo que está haciendo, siga adelante.
 
-Continue the upgrade operation?</value>
+¿Desea continuar con la operación de mejora?</value>
   </data>
   <data name="uu_enableNetPickerWindow" xml:space="preserve">
-    <value>Enable net picker window
-Allow to assign the net being built to be used here.</value>
+    <value>Activar la ventana del selector de red
+Permite asignar la red que se está construyendo para ser usada aquí.</value>
   </data>
 </root>
