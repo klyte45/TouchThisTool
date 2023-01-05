@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UU_SHOWUNDERGROUNDVIEW" xml:space="preserve">
-    <value>Tunnel mode</value>
+    <value>Modo túnel</value>
   </data>
   <data name="UU_UPGRADETO_PATTERN" xml:space="preserve">
     <value>Upgrade this segment to:
@@ -163,49 +163,49 @@
     <value>No stop support</value>
   </data>
   <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">
-    <value>Undefined</value>
+    <value>Indefinido</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Default" xml:space="preserve">
-    <value>Default</value>
+    <value>Por defecto</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Tunnel" xml:space="preserve">
-    <value>Tunnel</value>
+    <value>Túnel</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Ground" xml:space="preserve">
-    <value>Ground</value>
+    <value>En suelo</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Elevated" xml:space="preserve">
-    <value>Elevated</value>
+    <value>Elevado</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Bridge" xml:space="preserve">
-    <value>Bridge</value>
+    <value>Puente</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Slope" xml:space="preserve">
-    <value>Slope</value>
+    <value>Pendiente</value>
   </data>
   <data name="UU_CURRENTLYUPGRADINGTO" xml:space="preserve">
-    <value>Currently upgrading to:</value>
+    <value>Actualizando a:</value>
   </data>
   <data name="UU_USETHISNETWORKAUUT" xml:space="preserve">
     <value>Use current net to upgrade untouchable</value>
   </data>
   <data name="UU_BRIDGEMODE" xml:space="preserve">
-    <value>Force bridge</value>
+    <value>Forzar puente</value>
   </data>
   <data name="UU_ELEVATEDMODE" xml:space="preserve">
-    <value>Force elevated</value>
+    <value>Forzar elevado</value>
   </data>
   <data name="UU_GROUNDMODE" xml:space="preserve">
-    <value>Force ground</value>
+    <value>Forzar En suelo</value>
   </data>
   <data name="UU_NORMALMODE" xml:space="preserve">
     <value>Try use the current segment elevation type</value>
   </data>
   <data name="UU_TUNNELMODE" xml:space="preserve">
-    <value>Force tunnel</value>
+    <value>Forzar túnel</value>
   </data>
   <data name="UU_PICKFROMCURRENTNETTOOLITEM" xml:space="preserve">
-    <value>Pick network from current selected</value>
+    <value>Elegir red de la selección actual</value>
   </data>
   <data name="UU_TIP_PRESSCTRLTOPICK" xml:space="preserve">
     <value>TIP: Hold Control key to pick the hovered segment type in this mod!
