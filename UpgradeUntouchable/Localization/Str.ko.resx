@@ -121,8 +121,7 @@
     <value>터널 모드</value>
   </data>
   <data name="UU_UPGRADETO_PATTERN" xml:space="preserve">
-    <value>Upgrade this segment to:
-&lt;color white&gt;{0}&lt;/color&gt;</value>
+    <value>이 세그먼트를 &lt;color white&gt;{0}&lt;/color&gt;(으)로 업그레이드 합니다.</value>
   </data>
   <data name="UU_PICKNET_PATTERN" xml:space="preserve">
     <value>Get this network to upgrade untouchable networks:
@@ -132,7 +131,7 @@
     <value>Hold Control key to pick a road to use to upgrade untouchable segments</value>
   </data>
   <data name="UU_NONESELECTED" xml:space="preserve">
-    <value>&lt;NONE SELECTED!&gt;</value>
+    <value>&lt;선택되지 않음!&gt;</value>
   </data>
   <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">
     <value>Use classic Touch This! mode
