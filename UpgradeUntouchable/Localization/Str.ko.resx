@@ -134,11 +134,11 @@
     <value>&lt;선택되지 않음!&gt;</value>
   </data>
   <data name="UU_CLASSICTOUCHTHISMODE" xml:space="preserve">
-    <value>Use classic Touch This! mode
-&lt;color=yellow&gt;(WARNING: This may cause issues in the buildings!)&lt;/color&gt;</value>
+    <value>클래식 Touch This! 모드 사용하기
+&lt;color=yellow&gt;(경고: 이 옵션은 건물 내 문제가 생길 수 있습니다!)&lt;/color&gt;</value>
   </data>
   <data name="UU_NETNOTSUPPORTED" xml:space="preserve">
-    <value>Net not supported!</value>
+    <value>지원되지 않는 네트워크입니다!</value>
   </data>
   <data name="UU_CANNOTUPGRADE_ITSELF" xml:space="preserve">
     <value>Can't upgrade to its own type!</value>
@@ -156,19 +156,19 @@
     <value>Different subservice</value>
   </data>
   <data name="UU_HASSTOP" xml:space="preserve">
-    <value>Supports stop</value>
+    <value>정거장을 지원합니다</value>
   </data>
   <data name="UU_NOSTOP" xml:space="preserve">
-    <value>No stop support</value>
+    <value>정거장을 지원하지 않습니다</value>
   </data>
   <data name="UU_ELEVATIONTYPE__None" xml:space="preserve">
-    <value>Undefined</value>
+    <value>알 수 없음</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Default" xml:space="preserve">
-    <value>Default</value>
+    <value>기본값</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Tunnel" xml:space="preserve">
-    <value>Tunnel</value>
+    <value>터널</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Ground" xml:space="preserve">
     <value>Ground</value>
@@ -177,13 +177,13 @@
     <value>Elevated</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Bridge" xml:space="preserve">
-    <value>Bridge</value>
+    <value>다리</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Slope" xml:space="preserve">
-    <value>Slope</value>
+    <value>경사</value>
   </data>
   <data name="UU_CURRENTLYUPGRADINGTO" xml:space="preserve">
-    <value>Currently upgrading to:</value>
+    <value>다음으로 업그레이드:</value>
   </data>
   <data name="UU_USETHISNETWORKAUUT" xml:space="preserve">
     <value>Use current net to upgrade untouchable</value>
