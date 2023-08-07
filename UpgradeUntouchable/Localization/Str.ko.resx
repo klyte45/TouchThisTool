@@ -174,7 +174,7 @@
     <value>Ground</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Elevated" xml:space="preserve">
-    <value>Elevated</value>
+    <value>고가</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Bridge" xml:space="preserve">
     <value>다리</value>
@@ -204,7 +204,7 @@
     <value>Force tunnel</value>
   </data>
   <data name="UU_PICKFROMCURRENTNETTOOLITEM" xml:space="preserve">
-    <value>Pick network from current selected</value>
+    <value>현재 선택된 항목을 네트워크 지정하기</value>
   </data>
   <data name="UU_TIP_PRESSCTRLTOPICK" xml:space="preserve">
     <value>TIP: Hold Control key to pick the hovered segment type in this mod!
