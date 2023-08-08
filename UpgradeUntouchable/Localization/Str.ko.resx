@@ -171,7 +171,7 @@
     <value>터널</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Ground" xml:space="preserve">
-    <value>Ground</value>
+    <value>지상</value>
   </data>
   <data name="UU_ELEVATIONTYPE__Elevated" xml:space="preserve">
     <value>고가</value>
@@ -189,19 +189,19 @@
     <value>Use current net to upgrade untouchable</value>
   </data>
   <data name="UU_BRIDGEMODE" xml:space="preserve">
-    <value>Force bridge</value>
+    <value>강제 다리</value>
   </data>
   <data name="UU_ELEVATEDMODE" xml:space="preserve">
-    <value>Force elevated</value>
+    <value>강제 고가</value>
   </data>
   <data name="UU_GROUNDMODE" xml:space="preserve">
-    <value>Force ground</value>
+    <value>강제 지상</value>
   </data>
   <data name="UU_NORMALMODE" xml:space="preserve">
     <value>Try use the current segment elevation type</value>
   </data>
   <data name="UU_TUNNELMODE" xml:space="preserve">
-    <value>Force tunnel</value>
+    <value>강제 터널</value>
   </data>
   <data name="UU_PICKFROMCURRENTNETTOOLITEM" xml:space="preserve">
     <value>현재 선택된 항목을 네트워크 지정하기</value>
